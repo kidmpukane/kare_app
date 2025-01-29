@@ -5,7 +5,7 @@ export default function TabsLayout() {
   return (
     <Tabs>
       <Tabs.Screen
-        name="index"
+        name="appIndex"
         options={{
           href: null,
         }}
@@ -23,7 +23,7 @@ export default function TabsLayout() {
         }}
       />
       <Tabs.Screen
-        name="index"
+        name="tabsAppIndex"
         options={{
           href: null,
         }}

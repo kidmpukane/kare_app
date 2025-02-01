@@ -1,10 +1,11 @@
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
 import { ReminderButtonLrg, ReminderButtonSml } from '../../molecules/ReminderButtons';
 import React from 'react';
 
 const ProfileMiddle = () => {
   return (
     <View style={styles.profileMiddleContainerStyles}>
+      <Text style={styles.profileHeaderTxt}>Routine Reminders</Text>
       <View style={styles.profileReminderBtnStyles}>
         <ReminderButtonLrg />
         <ReminderButtonSml 
@@ -30,6 +31,9 @@ const ProfileMiddle = () => {
 export default ProfileMiddle;
 
 const styles = StyleSheet.create({
+  profileHeaderTxt: {
+    fontSize: 40,
+  },
   profileReminderBtnStyles: {
     display: 'flex',
     flexDirection: 'row',
@@ -38,8 +42,8 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     paddingTop: 5,
     paddingBottom: 5,
-    borderColor: 'black',
-    borderWidth: 1,
+    // // borderColor: 'black',
+    // // borderWidth: 1,
     width: '100%', // Added to utilize full width for spacing
   },
   profileMiddleContainerStyles: {

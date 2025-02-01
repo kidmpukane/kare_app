@@ -1,14 +1,13 @@
-import { StyleSheet, Button, Text, View } from 'react-native'
-import { AuthenticationContext } from "../../AuthContext"
-import React, {useContext} from 'react'
-import ProfileTop from '../../../components/profileAssets/ProfileTop'
-import ProfileMiddle from '../../../components/profileAssets/ProfileMiddle'
-import ProfileBottom from '../../../components/profileAssets/ProfileBottom'
+import { StyleSheet, Button, Text, View, ScrollView } from 'react-native';
+import { AuthenticationContext } from "../../AuthContext";
+import React, { useContext } from 'react';
+import ProfileTop from '../../../components/profileAssets/ProfileTop';
+import ProfileMiddle from '../../../components/profileAssets/ProfileMiddle';
+import ProfileBottom from '../../../components/profileAssets/ProfileBottom';
 
-
-const profile = () => {
-
+const Profile = () => {
   const { updateAuthInfo } = useContext(AuthenticationContext);
+
   const handleSignOut = () => {
     updateAuthInfo({
       authCookie: null,
@@ -19,17 +18,27 @@ const profile = () => {
   };
 
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <ProfileTop/>
-      <ProfileMiddle/>
-      <ProfileBottom/>
-      <Text>profile</Text>
-            <Button title="Sign Out" onPress={handleSignOut} />
+    <ScrollView contentContainerStyle={styles.container}>
+      <ProfileTop />
+      <ProfileMiddle />
+      <ProfileBottom />
+      <Text style={styles.profileText}>Profile</Text>
+      <Button title="Sign Out" onPress={handleSignOut} />
+    </ScrollView>
+  );
+};
 
-    </View>
-  )
-}
+export default Profile;
 
-export default profile
-
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  container: {
+    flexGrow: 1, // Makes sure content stretches even when not scrollable
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingBottom: 20,
+  },
+  profileText: {
+    fontSize: 18,
+    marginVertical: 20,
+  },
+});

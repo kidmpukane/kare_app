@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const ResultsTop = () => {
+const RecommendationResults = () => {
   return (
     <View>
-      <Text>Results Top</Text>
+      <Text>Recommendation Results</Text>
     </View>
   )
 }
 
-export default ResultsTop
+export default RecommendationResults
 
 const styles = StyleSheet.create({})

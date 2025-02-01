@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const ResultsBottom = () => {
+const SkinResults = () => {
   return (
     <View>
-      <Text>Results Bottom</Text>
+      <Text>Skin Results</Text>
     </View>
   )
 }
 
-export default ResultsBottom
+export default SkinResults
 
 const styles = StyleSheet.create({})

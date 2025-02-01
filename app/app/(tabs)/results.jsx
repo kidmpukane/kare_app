@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native'
-import ResultsTop from '../../../components/resultsTop'
-import ResultsBottom from '../../../components/resultsBottom'
+import SkinResults from '../../../components/resultsAssets/SkinResults'
+import RecommendationResults from '../../../components/resultsAssets/RecommendationResults'
 import React from 'react'
 
 const results = () => {
   return (
     <View>
-      <ResultsTop />
+      <SkinResults />
       <Text>results</Text>
-      <ResultsBottom />
+      <RecommendationResults />
     </View>
   )
 }

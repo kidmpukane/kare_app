@@ -6,6 +6,7 @@ const ProfileMiddle = () => {
   return (
     <View style={styles.profileMiddleContainerStyles}>
       <Text style={styles.profileHeaderTxt}>Routine Reminders</Text>
+      <View style={styles.underline} />
       <View style={styles.profileReminderBtnStyles}>
         <ReminderButtonLrg />
         <ReminderButtonSml 
@@ -42,6 +43,14 @@ const styles = StyleSheet.create({
   profileHeaderTxt: {
     fontSize: 40,
     padding: 10,
+  },
+  underline: {
+    height: 1,              // Thickness of the line
+    backgroundColor: 'black', // Line color
+    width: '90%',           // Adjust width as needed
+    alignSelf: 'center',     // Centers the line
+    marginTop: 20,        // Space below the line
+    marginBottom: 20,        // Space below the line
   },
   profileReminderBtnStyles: {
     display: 'flex',

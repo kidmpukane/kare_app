@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end', // Align text at the bottom
   },
   imageBorder: {
-    borderRadius: 20,
+    borderRadius: 30,
   },
 
   textContainer: {

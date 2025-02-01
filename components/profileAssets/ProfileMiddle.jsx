@@ -31,8 +31,17 @@ const ProfileMiddle = () => {
 export default ProfileMiddle;
 
 const styles = StyleSheet.create({
+  profileMiddleContainerStyles: {
+    display: 'flex',
+    flexDirection: 'column',
+    borderRadius: 15,
+    padding: 12,
+
+    width: '100%', // Added to ensure proper layout
+  },
   profileHeaderTxt: {
     fontSize: 40,
+    padding: 10,
   },
   profileReminderBtnStyles: {
     display: 'flex',
@@ -46,13 +55,5 @@ const styles = StyleSheet.create({
     // // borderWidth: 1,
     width: '100%', // Added to utilize full width for spacing
   },
-  profileMiddleContainerStyles: {
-    display: 'flex',
-    flexDirection: 'column',
-    borderRadius: 15,
-    padding: 12,
-    alignItems: 'center',
-    justifyContent: 'center', // Changed for centered alignment
-    width: '100%', // Added to ensure proper layout
-  },
+
 });

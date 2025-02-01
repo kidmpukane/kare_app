@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
   
     programContainer: {
       backgroundColor: '#24221E',
-      borderRadius: 25,
+      borderRadius: 30,
       paddingTop: 25,
       paddingBottom: 15,
       paddingLeft: 0,

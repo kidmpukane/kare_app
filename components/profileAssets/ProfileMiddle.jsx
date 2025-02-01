@@ -7,9 +7,21 @@ const ProfileMiddle = () => {
     <View style={styles.profileMiddleContainerStyles}>
       <View style={styles.profileReminderBtnStyles}>
         <ReminderButtonLrg />
-        <ReminderButtonSml />
-        <ReminderButtonSml />
-        <ReminderButtonSml />
+        <ReminderButtonSml 
+          iconPm ="coffee" 
+          timePm ="06:00AM"
+          routinePm ="Sunrise Routine"
+          />
+        <ReminderButtonSml 
+          iconPm="sun-o" 
+          timePm ="12:00PM"
+          routinePm ="Sunrise Routine"
+          />
+        <ReminderButtonSml 
+          iconPm="moon-o" 
+          timePm ="22:00PM"
+          routinePm ="Evening Routine"
+          />
       </View>
     </View>
   );

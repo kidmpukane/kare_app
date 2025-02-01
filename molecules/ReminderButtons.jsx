@@ -11,16 +11,16 @@ const ReminderButtonLrg = () => {
     </View>
   )
 }
-const ReminderButtonSml = () => {
+const ReminderButtonSml = (props) => {
   return (
     <View>
       <Pressable style={styles.reminderBtnSmlStyles}>
-        <FontAwesome name="sun-o" size={15} color="#24221E" />
+        <FontAwesome name={props.iconPm} size={15} color="#24221E" />
         <Text style={styles.reminderTxtSmlStyles}>
-            06:30AM
+            {props.timePm}
         </Text>
         <Text style={styles.reminderTxtSmlStyles2}> 
-            Sunrise Routine
+            {props.routinePm}
         </Text>
       </Pressable>
     </View>

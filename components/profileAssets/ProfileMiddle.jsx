@@ -1,40 +1,42 @@
-import { StyleSheet,View} from 'react-native'
-import { ReminderButtonLrg, ReminderButtonSml } from '../../molecules/ReminderButtons'
-import React from 'react'
+import { StyleSheet, View } from 'react-native';
+import { ReminderButtonLrg, ReminderButtonSml } from '../../molecules/ReminderButtons';
+import React from 'react';
 
 const ProfileMiddle = () => {
   return (
     <View style={styles.profileMiddleContainerStyles}>
-      <View style={styles.profileRemiderBtnStyles}>
-      <ReminderButtonLrg/>
-      <ReminderButtonSml/>
-      <ReminderButtonSml/>
-      <ReminderButtonSml/>
+      <View style={styles.profileReminderBtnStyles}>
+        <ReminderButtonLrg />
+        <ReminderButtonSml />
+        <ReminderButtonSml />
+        <ReminderButtonSml />
       </View>
     </View>
-  )
-}
+  );
+};
 
-export default ProfileMiddle
+export default ProfileMiddle;
 
 const styles = StyleSheet.create({
-  profileRemiderBtnStyles:{
+  profileReminderBtnStyles: {
     display: 'flex',
     flexDirection: 'row',
-    borderRadius: 15,
-    padding: 10,
+    justifyContent: 'space-evenly', // Changed to evenly space buttons
     alignItems: 'center',
-    justifyContent: 'space-around',
+    borderRadius: 15,
+    paddingTop: 5,
+    paddingBottom: 5,
     borderColor: 'black',
     borderWidth: 1,
+    width: '100%', // Added to utilize full width for spacing
   },
-  profileMiddleContainerStyles:{
+  profileMiddleContainerStyles: {
     display: 'flex',
     flexDirection: 'column',
     borderRadius: 15,
-    padding: 10,
+    padding: 12,
     alignItems: 'center',
-    justifyContent: 'space-around',
-
+    justifyContent: 'center', // Changed for centered alignment
+    width: '100%', // Added to ensure proper layout
   },
-})
+});

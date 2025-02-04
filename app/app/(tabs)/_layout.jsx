@@ -4,12 +4,12 @@ import FontAwesome from '@expo/vector-icons/FontAwesome';
 export default function TabsLayout() {
   return (
     <Tabs>
-      <Tabs.Screen
+      {/* <Tabs.Screen
         name="appIndex"
         options={{
           href: null,
         }}
-      />
+      /> */}
       <Tabs.Screen
         name="assessment"
         options={{

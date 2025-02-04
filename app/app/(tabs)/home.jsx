@@ -1,6 +1,8 @@
-import { StyleSheet, Text, View, TouchableOpacity, FlatList, Dimensions,  Image } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, FlatList, Dimensions,  ImageBackground } from 'react-native';
 import React, { useLayoutEffect } from 'react';
 import { useNavigation } from '@react-navigation/native';
+
+
 
 const Home = () => {
   const navigation = useNavigation();
@@ -18,24 +20,28 @@ const Home = () => {
     { id: '3', heading: 'Product Three', text: 'The Morning Magic routine aids your skin...' },
     { id: '4', heading: 'Product Four', text: 'The Morning Magic routine aids your skin...' },
     { id: '4', heading: 'Product Five', text: 'The Morning Magic routine aids your skin...' },
-    { id: '4', heading: 'Product Six', text: 'The Morning Magic routine aids your skin...' },
+    { id: '4', heading: 'Product Six', text: 'The Morning Magic routine aids your skin...', image : require('../../../assets/images/image.png') },
   ];
 
   // Render each box item
-  const renderBox = ({ item }) => (
-    <TouchableOpacity
-      style={styles.box}
-      onPress={() => navigation.navigate('Profile')}
-    >
-      <View style={styles.inner}>
-        <View style={styles.boxText}>
-          <Text>{item.heading}</Text>
-          <Text style={styles.text}>{item.text}</Text>
-          {/* <Image source={require('../../../assets/images/image.png')} style={styles.cardImage} /> */}
-        </View>
-      </View>
-    </TouchableOpacity>
-  );
+  const renderBox = ({ item }) => {
+    console.log(item.image); // Add this line to debug the image path
+    return (
+      <TouchableOpacity
+        style={styles.box}
+        onPress={() => navigation.navigate('Profile')}
+      >
+        <ImageBackground source={item.image} style={styles.imageBackground}>
+          <View style={styles.inner}>
+            <View style={styles.boxText}>
+              <Text>{item.heading}</Text>
+              <Text style={styles.text}>{item.text}</Text>
+            </View>
+          </View>
+        </ImageBackground>
+      </TouchableOpacity>
+    );
+  };
 
   return (
     <View style={styles.container}>
@@ -87,5 +93,10 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 16,
+  },
+  imageBackground: {
+    flex: 1,
+    resizeMode: 'cover',
+    justifyContent: 'center',
   },
 });

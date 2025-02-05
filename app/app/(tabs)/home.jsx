@@ -20,7 +20,7 @@ const Home = () => {
     { id: '3', heading: 'Product Three', text: 'The Morning Magic routine aids your skin...' },
     { id: '4', heading: 'Product Four', text: 'The Morning Magic routine aids your skin...' },
     { id: '4', heading: 'Product Five', text: 'The Morning Magic routine aids your skin...' },
-    { id: '4', heading: 'Product Six', text: 'The Morning Magic routine aids your skin...', image : require('../../../assets/images/image.png') },
+    { id: '4', heading: 'Product Six', text: 'The Morning Magic routine aids your skin...' },
   ];
 
   // Render each box item

@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from "react-native";
 import { HeaderBody } from "../../molecules/HeaderBody";
-import PressableNav from "../../molecules/PressableNav";
+import { PressableNav } from "../../molecules/PressableNav";
 import React from "react";
 
 const ProfileBottom = () => {

@@ -1,28 +1,54 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View } from "react-native";
+import React from "react";
 
 const HeaderBody = () => {
   return (
     <View>
       <Text style={styles.headerStyles}>Header</Text>
-      <Text style={styles.bodyStyle}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</Text>
+      <Text style={styles.bodyStyle}>
+        Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry. Lorem Ipsum has been the industry's standard dummy text ever
+        since the 1500s, when an unknown printer took a galley of type and
+        scrambled it to make a type specimen book.
+      </Text>
     </View>
-  )
-}
+  );
+};
 
-export default HeaderBody
+const HeaderBody2 = () => {
+  return (
+    <View>
+      <Text style={styles.headerStyles2}>Header</Text>
+      <Text style={styles.bodyStyle2}>
+        Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry. Lorem Ipsum has been the industry's standard dummy text ever
+        since the 1500s.
+      </Text>
+    </View>
+  );
+};
+
+export { HeaderBody, HeaderBody2 };
 
 const styles = StyleSheet.create({
-
   headerStyles: {
     fontSize: 38,
     padding: 10,
-    color: '#EBE5DC'
+    color: "#EBE5DC",
+  },
+  headerStyles2: {
+    fontSize: 38,
+    padding: 10,
+    color: "#24221E",
   },
   bodyStyle: {
     fontSize: 14,
     padding: 10,
-    color: '#EBE5DC'
-  }
-
-})
+    color: "#EBE5DC",
+  },
+  bodyStyle2: {
+    fontSize: 14,
+    padding: 10,
+    color: "#24221E",
+  },
+});

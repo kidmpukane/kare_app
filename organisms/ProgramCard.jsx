@@ -1,26 +1,34 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, ImageBackground } from "react-native";
 import { HeaderBody2 } from "../molecules/HeaderBody";
 import React from "react";
 
 const ProgramCard = () => {
+  const cardImage =
+    "https://i.pinimg.com/474x/77/64/bd/7764bdc071f1907071e0a6cf046865a0.jpg";
   return (
     <View>
-      <View style={styles.cardTopContainer}>
-        <View style={styles.durationIndicator}>
-          <View style={styles.durationContainer}>
-            <Text style={styles.durationText}>Duration</Text>
+      <ImageBackground
+        source={{ uri: cardImage }}
+        style={styles.cardImageStyles}
+        imageStyle={styles.borderImageStyle}
+      >
+        <View style={styles.cardTopContainer}>
+          <View style={styles.durationIndicator}>
+            <View style={styles.durationContainer}>
+              <Text style={styles.durationText}>Duration</Text>
+            </View>
+            <View style={styles.weeksContainer}>
+              <Text>12 Weeks</Text>
+            </View>
           </View>
-          <View style={styles.weeksContainer}>
-            <Text>12 Weeks</Text>
+          <View style={styles.resultsIndicator}>
+            <Text>Dry</Text>
           </View>
         </View>
-        <View style={styles.resultsIndicator}>
-          <Text>Dry</Text>
+        <View style={styles.cardDescription}>
+          <HeaderBody2 />
         </View>
-      </View>
-      <View style={styles.cardDescription}>
-        <HeaderBody2 />
-      </View>
+      </ImageBackground>
     </View>
   );
 };
@@ -28,6 +36,15 @@ const ProgramCard = () => {
 export default ProgramCard;
 
 const styles = StyleSheet.create({
+  cardImageStyles: {
+    padding: 10,
+    height: 600,
+    borderRadius: 30,
+    justifyContent: "space-between",
+  },
+  borderImageStyle: {
+    borderRadius: 30,
+  },
   cardTopContainer: {
     display: "flex",
     flexDirection: "row",

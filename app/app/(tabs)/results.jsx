@@ -6,9 +6,9 @@ import React from "react";
 const results = () => {
   return (
     <View>
-      <SkinResults />
+      {/* <SkinResults />
       <Text>Program Recommendations</Text>
-      <View style={styles.underline} />
+      <View style={styles.underline} /> */}
       <RecommendationResults />
     </View>
   );

@@ -19,6 +19,7 @@ const HeaderBody2 = () => {
   return (
     <View>
       <Text style={styles.headerStyles2}>Header</Text>
+      <View style={styles.underline} />
       <Text style={styles.bodyStyle2}>
         Lorem Ipsum is simply dummy text of the printing and typesetting
         industry. Lorem Ipsum has been the industry's standard dummy text ever
@@ -50,5 +51,13 @@ const styles = StyleSheet.create({
     fontSize: 14,
     padding: 10,
     color: "#24221E",
+  },
+  underline: {
+    height: 1.5,
+    backgroundColor: "black",
+    width: "90%",
+    alignSelf: "center",
+    marginTop: 20,
+    marginBottom: 20,
   },
 });

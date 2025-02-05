@@ -1,9 +1,9 @@
-import { StyleSheet, Button, Text, View, ScrollView } from 'react-native';
+import { StyleSheet, Button, Text, View, ScrollView } from "react-native";
 import { AuthenticationContext } from "../../AuthContext";
-import React, { useContext } from 'react';
-import ProfileTop from '../../../components/profileAssets/ProfileTop';
-import ProfileMiddle from '../../../components/profileAssets/ProfileMiddle';
-import ProfileBottom from '../../../components/profileAssets/ProfileBottom';
+import React, { useContext } from "react";
+import ProfileTop from "../../../components/profileAssets/ProfileTop";
+import ProfileMiddle from "../../../components/profileAssets/ProfileMiddle";
+import ProfileBottom from "../../../components/profileAssets/ProfileBottom";
 
 const Profile = () => {
   const { updateAuthInfo } = useContext(AuthenticationContext);
@@ -33,8 +33,8 @@ export default Profile;
 const styles = StyleSheet.create({
   container: {
     flexGrow: 1, // Makes sure content stretches even when not scrollable
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     paddingBottom: 20,
   },
   profileText: {

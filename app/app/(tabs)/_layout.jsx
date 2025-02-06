@@ -1,15 +1,15 @@
 import { Tabs } from "expo-router";
-import FontAwesome from '@expo/vector-icons/FontAwesome';
+import FontAwesome from "@expo/vector-icons/FontAwesome";
 
 export default function TabsLayout() {
   return (
     <Tabs>
-      {/* <Tabs.Screen
-        name="appIndex"
+      <Tabs.Screen
+        name="routines"
         options={{
           href: null,
         }}
-      /> */}
+      />
       <Tabs.Screen
         name="assessment"
         options={{

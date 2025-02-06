@@ -39,6 +39,7 @@ const styles = StyleSheet.create({
   cardImageStyles: {
     padding: 15,
     height: 600,
+    width: 380,
     borderRadius: 30,
     justifyContent: "space-between",
   },

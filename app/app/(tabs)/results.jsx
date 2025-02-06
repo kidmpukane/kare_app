@@ -9,7 +9,19 @@ const results = () => {
       <SkinResults />
       <Text style={styles.resultText}>Program Recommendations</Text>
       <View style={styles.underline} />
-      <RecommendationResults />
+      {/* Wrap recommendations in a horizontal ScrollView */}
+      <ScrollView
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        contentContainerStyle={styles.recommendationsContainer}
+      >
+        <RecommendationResults />
+        <RecommendationResults />
+        <RecommendationResults />
+        <RecommendationResults />
+        <RecommendationResults />
+        <RecommendationResults />
+      </ScrollView>
     </ScrollView>
   );
 };
@@ -18,7 +30,7 @@ export default results;
 
 const styles = StyleSheet.create({
   container: {
-    flexGrow: 1, // Makes sure content stretches even when not scrollable
+    flexGrow: 1,
     justifyContent: "center",
     alignItems: "center",
     paddingBottom: 20,
@@ -34,5 +46,11 @@ const styles = StyleSheet.create({
   resultText: {
     fontSize: 40,
     padding: 10,
+  },
+  recommendationsContainer: {
+    flexDirection: "row",
+    padding: 20,
+    alignItems: "center",
+    gap: 20,
   },
 });

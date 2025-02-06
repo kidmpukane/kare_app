@@ -28,20 +28,14 @@ const Home = () => {
         style={styles.box}
         onPress={() => navigation.navigate('Profile')}
       >
-          {/* <View style={styles.inner}> */}
-            <Image
-            source={{ uri: item.image }}
-            style={{ 
-              width: '100%', 
-              height: '100%', 
-              borderRadius: 10 
-            }} 
-            />
-            {/* <View style={styles.boxText}>
-              <Text>{item.heading}</Text>
-              <Text style={styles.text}>{item.text}</Text>
-            </View> */}
-          {/* </View> */}
+        <Image
+        source={{ uri: item.image }}
+        style={{ 
+          width: '100%', 
+          height: '100%', 
+          borderRadius: 10 
+        }} 
+        />
       </TouchableOpacity>
     );
   };
@@ -64,11 +58,10 @@ const Home = () => {
           contentContainerStyle={styles.boxContainer}
         />
         <View style={styles.footer}>
-          {/* <Text style={styles.text}>Footer Component</Text> */}
+          <View>
+            <Text style={styles.text}>Start Shopping</Text>
+          </View>
           <TouchableOpacity style={styles.footerButton}>
-            <View>
-              {/* <Text style={{ color: '#ffffff', fontSize: 18 }}>Discover More</Text> */}
-            </View>
           </TouchableOpacity>
         </View>
       </View>

@@ -4,9 +4,9 @@ export default function ProgramsLayout() {
   return (
     <Stack>
       <Stack.Screen
-        name="resultsIndex"
+        name="recommendationsIndex"
         options={{
-          title: "Programs",
+          title: "ResultIndex",
           href: null,
         }}
       />
@@ -20,7 +20,7 @@ export default function ProgramsLayout() {
       <Stack.Screen
         name="programs"
         options={{
-          title: "Routines",
+          title: "Programs",
           href: null,
         }}
       />

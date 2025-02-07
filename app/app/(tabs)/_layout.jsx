@@ -5,18 +5,6 @@ export default function TabsLayout() {
   return (
     <Tabs>
       <Tabs.Screen
-        name="results/routines"
-        options={{
-          href: null,
-        }}
-      />
-      <Tabs.Screen
-        name="results/programs"
-        options={{
-          href: null,
-        }}
-      />
-      <Tabs.Screen
         name="assessment"
         options={{
           href: null,

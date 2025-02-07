@@ -1,12 +1,21 @@
-import { StyleSheet, Text, View, TouchableOpacity, FlatList, Dimensions,  Image, ScrollView } from 'react-native';
-import React, { useLayoutEffect } from 'react';
+import { StyleSheet, Text, View, TouchableOpacity, FlatList, Dimensions,  ImageBackground, ScrollView } from 'react-native';
+import React, { useLayoutEffect, useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
-
-
+import { LinearGradient } from 'react-native-linear-gradient'
+import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
+import Ionicons from '@expo/vector-icons/Ionicons';
 
 const Home = () => {
-  const navigation = useNavigation();
+  const [active, setActive] = useState(false);
 
+  const handleChangeActive = () => {
+    setActive((previousIcon) => {
+      return !previousIcon;
+    });
+  };
+  
+  const navigation = useNavigation();
+  
   useLayoutEffect(() => {
     navigation.setOptions({
       headerShown: false,
@@ -28,7 +37,7 @@ const Home = () => {
         style={styles.box}
         onPress={() => navigation.navigate('Profile')}
       >
-        <Image
+        <ImageBackground
         source={{ uri: item.image }}
         style={{ 
           width: '100%', 
@@ -36,11 +45,24 @@ const Home = () => {
           borderRadius: 10 
         }} 
         >
-        <View style={styles.textContainer}>
+        {/* <LinearGradient 
+        colors={['#00000000', '#000000']} 
+        style={{height : '100%', width : '100%'}}>
+        </LinearGradient> */}
+        <View style={styles.desContainer}>
           <Text style={styles.text}>{item.heading}</Text>
           <Text style={styles.text}>{item.text}</Text>
         </View>
-        </Image>
+        <View style={{ position: 'absolute', right: 0, flexDirection: 'row', justifyContent: 'space-between', padding: 10 }}>
+          <TouchableOpacity onPress={handleChangeActive}>
+            {active ? (
+              <Ionicons name="bag-check" size={24} color="black" />
+            ) : (
+              <Ionicons name="bag-add" size={24} color="black" />
+            )}
+          </TouchableOpacity>
+        </View>
+        </ImageBackground>
       </TouchableOpacity>
     );
   };
@@ -51,6 +73,11 @@ const Home = () => {
         {/* <View style={styles.header}>
           <Text style={styles.text}>Header Component</Text>
         </View> */}
+        <View style={{ position: 'absolute', right: 0, flexDirection: 'row', justifyContent: 'space-between', padding: 10 }}>
+          <TouchableOpacity>
+            <FontAwesome5 name="shopping-cart" size={24} color="white" />
+          </TouchableOpacity>
+        </View>
         <View style={styles.headingContainer}>
           <Text style={styles.heading}>Programs</Text>
           <Text style={styles.text}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium et nemo iusto minus commodi, nihil eos dolorum suscipit aspernatur error omnis eaque dicta, quisquam repudiandae! Quo temporibus repellendus delectus possimus!</Text>
@@ -62,13 +89,13 @@ const Home = () => {
           numColumns={2}
           contentContainerStyle={styles.boxContainer}
         />
-        <View style={styles.footer}>
+        {/* <View style={styles.footer}>
+          <TouchableOpacity style={styles.footerButton}>
+          </TouchableOpacity>
           <View style={styles.textContainer}>
             <Text style={styles.text}>Continue To Checkout</Text>
           </View>
-          <TouchableOpacity style={styles.footerButton}>
-          </TouchableOpacity>
-        </View>
+        </View> */}
       </View>
     </ScrollView>
   );
@@ -105,9 +132,10 @@ const styles = StyleSheet.create({
     height: Dimensions.get('window').height * 0.425, 
     padding: 5,
   },
-  textContainer: {
-    // margin: 10,
-    // padding: 10,
+  desContainer: {
+    padding: 10,
+    position: 'absolute',
+    bottom: 0,
   },
   // footer: {
   // inner: {
@@ -136,7 +164,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   textContainer: {
+    // position: 'absolute',
+    // bottom: 5,
     fontSize: 18,
+    padding: 10,
     // top: 20,
   },
   footerButton: {

@@ -35,7 +35,12 @@ const Home = () => {
           height: '100%', 
           borderRadius: 10 
         }} 
-        />
+        >
+        <View style={styles.textContainer}>
+          <Text style={styles.text}>{item.heading}</Text>
+          <Text style={styles.text}>{item.text}</Text>
+        </View>
+        </Image>
       </TouchableOpacity>
     );
   };
@@ -58,8 +63,8 @@ const Home = () => {
           contentContainerStyle={styles.boxContainer}
         />
         <View style={styles.footer}>
-          <View>
-            <Text style={styles.text}>Start Shopping</Text>
+          <View style={styles.textContainer}>
+            <Text style={styles.text}>Continue To Checkout</Text>
           </View>
           <TouchableOpacity style={styles.footerButton}>
           </TouchableOpacity>
@@ -100,10 +105,11 @@ const styles = StyleSheet.create({
     height: Dimensions.get('window').height * 0.425, 
     padding: 5,
   },
-  boxText: {
-    margin: 10,
-    padding: 10,
+  textContainer: {
+    // margin: 10,
+    // padding: 10,
   },
+  // footer: {
   // inner: {
   //   flex: 1,
   //   backgroundColor: '#c8c8c8',
@@ -125,9 +131,13 @@ const styles = StyleSheet.create({
     marginTop: 10,
     marginBottom: 10,
     borderRadius: 20,
-    backgroundColor: '#c8c8c8',
+    backgroundColor: '#EBE5DC',
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  textContainer: {
+    fontSize: 18,
+    // top: 20,
   },
   footerButton: {
     width: '10%',

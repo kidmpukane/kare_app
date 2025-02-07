@@ -5,7 +5,13 @@ export default function TabsLayout() {
   return (
     <Tabs>
       <Tabs.Screen
-        name="routines"
+        name="results/routines"
+        options={{
+          href: null,
+        }}
+      />
+      <Tabs.Screen
+        name="results/programs"
         options={{
           href: null,
         }}
@@ -16,12 +22,7 @@ export default function TabsLayout() {
           href: null,
         }}
       />
-      <Tabs.Screen
-        name="programs"
-        options={{
-          href: null,
-        }}
-      />
+
       <Tabs.Screen
         name="tabsAppIndex"
         options={{

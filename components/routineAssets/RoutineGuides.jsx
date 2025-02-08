@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View } from "react-native";
-import { HeaderBody3 } from "../../molecules/HeaderBody";
+import { HeaderBody } from "../../molecules/HeaderBody";
 import React from "react";
 
 const RoutineGuides = () => {
@@ -10,7 +10,7 @@ const RoutineGuides = () => {
           <Text>Results</Text>
         </View>
         <View>
-          <HeaderBody3 />
+          <HeaderBody />
         </View>
       </View>
     </View>

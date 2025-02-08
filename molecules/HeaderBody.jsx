@@ -5,6 +5,7 @@ const HeaderBody = () => {
   return (
     <View>
       <Text style={styles.headerStyles}>Header</Text>
+      <View style={styles.underline3} />
       <Text style={styles.bodyStyle}>
         Lorem Ipsum is simply dummy text of the printing and typesetting
         industry. Lorem Ipsum has been the industry's standard dummy text ever

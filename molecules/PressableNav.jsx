@@ -64,18 +64,18 @@ const PressableNav3 = () => {
 
 const PressableNav4 = () => {
   return (
-    <View style={styles.pressableViewStyles}>
+    <View style={styles.pressableViewStyles4}>
       <Pressable
         style={styles.pressableStyles4}
         onPress={() => alert("Pressable Nav2")}
       >
-        <Text style={styles.pressableTextStyle3}>Pressable Nav</Text>
+        <Text style={styles.pressableTextStyle4}>Pressable Nav</Text>
         <View style={styles.underline} />
-        <View style={styles.iconViewStyle}>
+        <View style={styles.iconViewStyle4}>
           <FontAwesome
-            style={styles.iconStyle}
+            style={styles.iconStyle4}
             name="angle-right"
-            size={15} // Adjust size as needed
+            size={10} // Adjust size as needed
           />
         </View>
       </Pressable>
@@ -92,6 +92,12 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
     paddingRight: 10,
   },
+  pressableViewStyles4: {
+    paddingTop: 1,
+    paddingBottom: 1,
+    paddingLeft: 5,
+    paddingRight: 5,
+  },
   pressableStyles: {
     alignItems: "center",
     justifyContent: "space-between",
@@ -106,7 +112,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     flexDirection: "row",
     borderRadius: 40,
-    fontSize: 14,
+    fontSize: 4,
     padding: 5,
     backgroundColor: "#24221E",
   },
@@ -138,9 +144,22 @@ const styles = StyleSheet.create({
     marginLeft: 20,
     color: "#EBE5DC",
   },
+  pressableTextStyle4: {
+    marginLeft: 2,
+    fontSize: 10,
+    color: "#EBE5DC",
+  },
   iconViewStyle: {
     width: 45,
     height: 45,
+    borderRadius: 50,
+    backgroundColor: "#24221E",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  iconViewStyle4: {
+    width: 20,
+    height: 20,
     borderRadius: 50,
     backgroundColor: "#24221E",
     justifyContent: "center", // Center vertically
@@ -149,6 +168,11 @@ const styles = StyleSheet.create({
   iconStyle: {
     color: "#EBE5DC",
   },
+
+  iconStyle4: {
+    color: "#EBE5DC",
+  },
+
   underline: {
     height: 1,
     backgroundColor: "#EBE5DC",

@@ -37,24 +37,23 @@ export default ProductCard;
 
 const styles = StyleSheet.create({
   cardImageStyles: {
-    padding: 15,
-    borderRadius: 5,
-    height: 500,
+    padding: 5,
+    height: 300,
     justifyContent: "space-between",
   },
   borderImageStyle: {
-    borderRadius: 20,
+    borderRadius: 15,
   },
 
   durationContainer: {
-    left: "80%",
+    left: "70%",
     padding: 6,
     backgroundColor: "#24221E",
     color: "#EBE5DC",
     justifyContent: "center",
     alignItems: "center",
-    borderRadius: 30,
-    width: "20%",
+    borderRadius: 20,
+    width: "30%",
   },
 
   durationText: {

@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
   routineContainer: {
     padding: 35,
     backgroundColor: "#24221E",
-    borderRadius: 20,
+    borderRadius: 15,
   },
   resultsIndicator: {
     position: "absolute", // Use absolute positioning

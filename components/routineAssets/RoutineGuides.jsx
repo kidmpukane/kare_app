@@ -22,6 +22,7 @@ export default RoutineGuides;
 const styles = StyleSheet.create({
   routineContainer: {
     padding: 35,
+    width: "100%",
     backgroundColor: "#24221E",
     borderRadius: 15,
   },

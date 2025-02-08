@@ -29,9 +29,10 @@ const RoutineCard = () => {
             </View>
           </View>
         </View>
-        <View style={styles.cardDescription}>
-          <HeaderBody3 />
-
+        <View style={styles.cardBottomContainer}>
+          <View style={styles.cardDescription}>
+            <HeaderBody3 />
+          </View>
           <View style={styles.moreInfo}>
             <View style={styles.moreBorderInfo}>
               <FontAwesome name="angle-right" size={24} color="#EBE5DC" />
@@ -48,29 +49,31 @@ export default RoutineCard;
 const styles = StyleSheet.create({
   cardImageStyles: {
     padding: 15,
-    borderRadius: 20,
+    borderRadius: 5,
     height: 300,
     justifyContent: "space-between",
   },
   borderImageStyle: {
-    borderRadius: 30,
+    borderRadius: 20,
   },
   cardTopContainer: {
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
   },
-  cardDescription: {
+  cardBottomContainer: {
     display: "flex",
     flexDirection: "row",
+    alignContent: "center",
+    alignItems: "center",
+    gap: 5,
+  },
+  cardDescription: {
     padding: 15,
     borderWidth: 1.5,
     borderColor: "#EBE5DC",
     width: "84%",
     borderRadius: 20,
-    alignContent: "center",
-    alignItems: "center",
-    gap: 30,
   },
   moreInfo: {
     padding: 20,

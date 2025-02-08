@@ -1,10 +1,13 @@
 import { StyleSheet, Text, View } from "react-native";
+import PurchaseAllCard from "../../organisms/PurchaseAllCard";
+import { PressableNav3 } from "../../molecules/PressableNav";
 import React from "react";
 
 const ProgramTop = () => {
   return (
     <View>
-      <Text>ProgramTop</Text>
+      <PurchaseAllCard />
+      <PressableNav3 />
     </View>
   );
 };

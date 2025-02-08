@@ -42,7 +42,27 @@ const PressableNav2 = () => {
   );
 };
 
-export { PressableNav, PressableNav2 };
+const PressableNav3 = () => {
+  return (
+    <View style={styles.pressableViewStyles}>
+      <Pressable
+        style={styles.pressableStyles3}
+        onPress={() => alert("Pressable Nav2")}
+      >
+        <Text style={styles.pressableTextStyle3}>Pressable Nav</Text>
+        <View style={styles.iconViewStyle}>
+          <FontAwesome
+            style={styles.iconStyle}
+            name="angle-right"
+            size={20} // Adjust size as needed
+          />
+        </View>
+      </Pressable>
+    </View>
+  );
+};
+
+export { PressableNav, PressableNav2, PressableNav3 };
 
 const styles = StyleSheet.create({
   pressableViewStyles: {
@@ -60,6 +80,15 @@ const styles = StyleSheet.create({
     padding: 5,
     backgroundColor: "#EBE5DC",
   },
+  pressableStyles3: {
+    alignItems: "center",
+    justifyContent: "space-between",
+    flexDirection: "row",
+    borderRadius: 40,
+    fontSize: 14,
+    padding: 5,
+    backgroundColor: "#24221E",
+  },
   pressableStyles2: {
     alignItems: "center",
     justifyContent: "space-between",
@@ -73,6 +102,10 @@ const styles = StyleSheet.create({
   },
   pressableTextStyle: {
     marginLeft: 20, // Moves the text 10 units to the right
+  },
+  pressableTextStyle3: {
+    marginLeft: 20,
+    color: "#EBE5DC",
   },
   iconViewStyle: {
     width: 45,

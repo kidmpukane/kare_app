@@ -1,17 +1,32 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, ScrollView } from "react-native";
 import ProgramTop from "../../../components/programAssets/ProgramTop";
 import ProgramBottom from "../../../components/programAssets/ProgramBottom";
 import React from "react";
 
 const routines = () => {
   return (
-    <View>
+    <ScrollView contentContainerStyle={styles.routinesContainer}>
       <ProgramTop />
+      <View style={styles.underline} />
       <ProgramBottom />
-    </View>
+    </ScrollView>
   );
 };
 
 export default routines;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  routinesContainer: {
+    flexGrow: 1,
+    padding: 10,
+    gap: 2,
+  },
+  underline: {
+    height: 1,
+    backgroundColor: "black",
+    width: "90%",
+    alignSelf: "center",
+    marginTop: 20,
+    marginBottom: 20,
+  },
+});

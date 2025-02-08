@@ -1,11 +1,17 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import RoutineCard from "../../organisms/RoutineCard";
 import React from "react";
 
 const RoutineBottom = () => {
   return (
     <View>
-      <RoutineCard />
+      <TouchableOpacity
+        onPress={() => {
+          alert("Pressed");
+        }}
+      >
+        <RoutineCard />
+      </TouchableOpacity>
     </View>
   );
 };

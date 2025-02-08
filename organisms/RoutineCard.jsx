@@ -31,13 +31,12 @@ const RoutineCard = () => {
         </View>
         <View style={styles.cardDescription}>
           <HeaderBody3 />
-          <TouchableOpacity>
-            <View style={styles.moreInfo}>
-              <View style={styles.moreBorderInfo}>
-                <FontAwesome name="angle-right" size={24} color="#EBE5DC" />
-              </View>
+
+          <View style={styles.moreInfo}>
+            <View style={styles.moreBorderInfo}>
+              <FontAwesome name="angle-right" size={24} color="#EBE5DC" />
             </View>
-          </TouchableOpacity>
+          </View>
         </View>
       </ImageBackground>
     </View>

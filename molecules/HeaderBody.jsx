@@ -29,7 +29,21 @@ const HeaderBody2 = () => {
   );
 };
 
-export { HeaderBody, HeaderBody2 };
+const HeaderBody3 = () => {
+  return (
+    <View>
+      <Text style={styles.headerStyles}>Header</Text>
+      <View style={styles.underline3} />
+      <Text style={styles.bodyStyle}>
+        Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry. Lorem Ipsum has been the industry's standard dummy text ever
+        since the 1500s.
+      </Text>
+    </View>
+  );
+};
+
+export { HeaderBody, HeaderBody2, HeaderBody3 };
 
 const styles = StyleSheet.create({
   headerStyles: {
@@ -59,5 +73,13 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     marginTop: 20,
     marginBottom: 20,
+  },
+  underline3: {
+    height: 1.2,
+    backgroundColor: "#EBE5DC",
+    width: "100%",
+    alignSelf: "center",
+    marginTop: 2,
+    marginBottom: 2,
   },
 });

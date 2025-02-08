@@ -1,14 +1,17 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View } from "react-native";
+import RoutineGuides from "../../../components/routineAssets/RoutineGuides";
+import RoutineBottom from "../../../components/routineAssets/RoutineBottom";
+import React from "react";
 
 const programs = () => {
   return (
     <View>
-      <Text>programs</Text>
+      <RoutineGuides />
+      <RoutineBottom />
     </View>
-  )
-}
+  );
+};
 
-export default programs
+export default programs;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({});

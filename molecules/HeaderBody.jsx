@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
     color: "#24221E",
   },
   underline: {
-    height: 1.5,
+    height: 1,
     backgroundColor: "black",
     width: "90%",
     alignSelf: "center",
@@ -68,9 +68,9 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   underline3: {
-    height: 1.2,
+    height: 1,
     backgroundColor: "#EBE5DC",
-    width: "100%",
+    width: "90%",
     alignSelf: "center",
     marginTop: 2,
     marginBottom: 2,

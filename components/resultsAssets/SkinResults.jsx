@@ -47,7 +47,10 @@ export default SkinResults;
 
 const styles = StyleSheet.create({
   resultsContainer: {
-    padding: 20,
+    paddingTop: 20,
+    paddingBottom: 20,
+    paddingLeft: 6,
+    paddingRight: 6,
     backgroundColor: "#24221E",
     borderRadius: 30,
   },
@@ -69,9 +72,9 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   underline: {
-    height: 1.5,
+    height: 1,
     backgroundColor: "#EBE5DC",
-    width: "100%",
+    width: "90%",
     alignSelf: "center",
     marginTop: 20,
     marginBottom: 0,

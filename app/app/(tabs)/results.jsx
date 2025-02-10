@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, ScrollView } from "react-native";
 import SkinResults from "../../../components/resultsAssets/SkinResults";
-import RecommendationResults from "../../../components/resultsAssets/RecommendationResults";
+import ProgramCard from "../../../organisms/ProgramCard";
 import React from "react";
 
 const results = () => {
@@ -15,12 +15,12 @@ const results = () => {
         showsHorizontalScrollIndicator={false}
         contentContainerStyle={styles.recommendationsContainer}
       >
-        <RecommendationResults />
-        <RecommendationResults />
-        <RecommendationResults />
-        <RecommendationResults />
-        <RecommendationResults />
-        <RecommendationResults />
+        <ProgramCard />
+        <ProgramCard />
+        <ProgramCard />
+        <ProgramCard />
+        <ProgramCard />
+        <ProgramCard />
       </ScrollView>
     </ScrollView>
   );
@@ -33,6 +33,9 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     justifyContent: "center",
     alignItems: "center",
+    paddingTop: 20,
+    paddingLeft: 2,
+    paddingRight: 2,
     paddingBottom: 20,
   },
   underline: {

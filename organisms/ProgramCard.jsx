@@ -1,34 +1,50 @@
-import { StyleSheet, Text, View, ImageBackground } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  ImageBackground,
+  TouchableOpacity,
+} from "react-native";
 import { HeaderBody2 } from "../molecules/HeaderBody";
+import { useRouter } from "expo-router";
 import React from "react";
 
 const ProgramCard = () => {
+  const router = useRouter();
   const cardImage =
     "https://i.pinimg.com/474x/77/64/bd/7764bdc071f1907071e0a6cf046865a0.jpg";
   return (
     <View>
-      <ImageBackground
-        source={{ uri: cardImage }}
-        style={styles.cardImageStyles}
-        imageStyle={styles.borderImageStyle}
+      <TouchableOpacity
+        onPress={() => {
+          {
+            router.push("/app/recommendations/programs");
+          }
+        }}
       >
-        <View style={styles.cardTopContainer}>
-          <View style={styles.durationIndicator}>
-            <View style={styles.durationContainer}>
-              <Text style={styles.durationText}>Duration</Text>
+        <ImageBackground
+          source={{ uri: cardImage }}
+          style={styles.cardImageStyles}
+          imageStyle={styles.borderImageStyle}
+        >
+          <View style={styles.cardTopContainer}>
+            <View style={styles.durationIndicator}>
+              <View style={styles.durationContainer}>
+                <Text style={styles.durationText}>Duration</Text>
+              </View>
+              <View style={styles.weeksContainer}>
+                <Text>12 Weeks</Text>
+              </View>
             </View>
-            <View style={styles.weeksContainer}>
-              <Text>12 Weeks</Text>
+            <View style={styles.resultsIndicator}>
+              <Text>Dry</Text>
             </View>
           </View>
-          <View style={styles.resultsIndicator}>
-            <Text>Dry</Text>
+          <View style={styles.cardDescription}>
+            <HeaderBody2 />
           </View>
-        </View>
-        <View style={styles.cardDescription}>
-          <HeaderBody2 />
-        </View>
-      </ImageBackground>
+        </ImageBackground>
+      </TouchableOpacity>
     </View>
   );
 };

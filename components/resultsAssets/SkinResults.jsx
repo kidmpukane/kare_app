@@ -22,6 +22,7 @@ const SkinResults = () => {
             }
           />
         </View>
+        <View style={styles.underline} />
       </View>
       <View style={styles.underline} />
       <View style={styles.resultsBottomContainer}>
@@ -69,11 +70,11 @@ const styles = StyleSheet.create({
   },
   underline: {
     height: 1.5,
-    backgroundColor: "black",
-    width: "90%",
+    backgroundColor: "#EBE5DC",
+    width: "100%",
     alignSelf: "center",
     marginTop: 20,
-    marginBottom: 20,
+    marginBottom: 0,
   },
   resultsBottomContainer: {},
 });

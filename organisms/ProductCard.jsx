@@ -10,23 +10,26 @@ import { FontAwesome } from "@expo/vector-icons";
 import { PressableNav4 } from "../molecules/PressableNav";
 import React from "react";
 
-const ProductCard = () => {
+const ProductCard = (props) => {
   const cardImage =
     "https://i.pinimg.com/474x/47/16/0b/47160bc6ba111b50084c244853a03744.jpg";
   return (
     <View>
       <ImageBackground
-        source={{ uri: cardImage }}
+        source={{ uri: props.cardImage }}
         style={styles.cardImageStyles}
         imageStyle={styles.borderImageStyle}
       >
         <View style={styles.cardTopContainer}>
           <View style={styles.durationContainer}>
-            <Text style={styles.durationText}>02</Text>
+            <Text style={styles.durationText}>{props.programNumber}</Text>
           </View>
         </View>
         <View style={styles.cardBottomContainer}>
-          <PressableNav4 />
+          <PressableNav4
+            buttonName={props.buttonName}
+            onPress={props.onPress}
+          />
         </View>
       </ImageBackground>
     </View>

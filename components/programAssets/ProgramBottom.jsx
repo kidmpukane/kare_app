@@ -13,7 +13,12 @@ const ProgramBottom = () => {
       columnWrapperStyle={styles.row} // ✅ Adds spacing between columns
       renderItem={() => (
         <View style={styles.cardContainer}>
-          <ProductCard />
+          <ProductCard
+            programNumber={props.programNumber}
+            buttonName={props.buttonName}
+            onPress={props.onPress}
+            cardImage={props.cardImage}
+          />
         </View>
       )}
     />

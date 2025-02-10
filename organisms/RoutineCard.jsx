@@ -9,7 +9,7 @@ import { HeaderBody3 } from "../molecules/HeaderBody";
 import { FontAwesome } from "@expo/vector-icons";
 import React from "react";
 
-const RoutineCard = () => {
+const RoutineCard = (props) => {
   const cardImage =
     "https://i.pinimg.com/474x/47/16/0b/47160bc6ba111b50084c244853a03744.jpg";
   return (
@@ -22,16 +22,19 @@ const RoutineCard = () => {
         <View style={styles.cardTopContainer}>
           <View style={styles.durationIndicator}>
             <View style={styles.durationContainer}>
-              <Text style={styles.durationText}>06:00</Text>
+              <Text style={styles.durationText}>{props.start}</Text>
             </View>
             <View style={styles.weeksContainer}>
-              <Text>12:00</Text>
+              <Text>{props.finish}</Text>
             </View>
           </View>
         </View>
         <View style={styles.cardBottomContainer}>
           <View style={styles.cardDescription}>
-            <HeaderBody3 />
+            <HeaderBody3
+              headerText={props.routineName}
+              bodyText={props.routineDescription}
+            />
           </View>
           <View style={styles.moreInfo}>
             <View style={styles.moreBorderInfo}>
@@ -106,13 +109,13 @@ const styles = StyleSheet.create({
     width: "40%",
   },
   durationContainer: {
-    padding: 5,
+    padding: 6,
     backgroundColor: "#24221E",
     color: "#EBE5DC",
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 30,
-    width: "50%",
+    width: "60%",
   },
   weeksContainer: {
     color: "#EBE5DC",
@@ -120,6 +123,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     borderRadius: 30,
     width: "50%",
+    right: "8%",
   },
   durationText: {
     color: "#EBE5DC",

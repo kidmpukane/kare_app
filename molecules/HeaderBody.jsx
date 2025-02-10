@@ -32,7 +32,17 @@ const HeaderBody3 = (props) => {
   );
 };
 
-export { HeaderBody, HeaderBody2, HeaderBody3 };
+const HeaderBody4 = (props) => {
+  return (
+    <View>
+      <Text style={styles.headerStyles}>{props.headerText}</Text>
+      <View style={styles.underline3} />
+      <Text style={styles.bodyStyle}>{props.bodyText}</Text>
+    </View>
+  );
+};
+
+export { HeaderBody, HeaderBody2, HeaderBody3, HeaderBody4 };
 
 const styles = StyleSheet.create({
   headerStyles: {

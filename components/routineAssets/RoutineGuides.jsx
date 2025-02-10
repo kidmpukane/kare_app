@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View } from "react-native";
-import { HeaderBody } from "../../molecules/HeaderBody";
+import { HeaderBody4 } from "../../molecules/HeaderBody";
 import React from "react";
 
 const RoutineGuides = () => {
@@ -7,10 +7,13 @@ const RoutineGuides = () => {
     <View style={styles.routineContainer}>
       <View style={styles.resultsTopContainer}>
         <View style={styles.resultsIndicator}>
-          <Text>Results</Text>
+          <Text>Dry</Text>
         </View>
         <View>
-          <HeaderBody />
+          <HeaderBody4
+            headerText="Routines"
+            bodyText="Complete a quick examination, to find the perfect routine.The app processes this information and provides an overview of a personalised skincare routine."
+          />
         </View>
       </View>
     </View>

@@ -1,34 +1,53 @@
-import { StyleSheet, Text, View, ImageBackground } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  ImageBackground,
+  TouchableOpacity,
+} from "react-native";
 import { HeaderBody2 } from "../molecules/HeaderBody";
+import { useRouter } from "expo-router";
 import React from "react";
 
-const ProgramCard = () => {
+const ProgramCard = (props) => {
+  const router = useRouter();
   const cardImage =
     "https://i.pinimg.com/474x/77/64/bd/7764bdc071f1907071e0a6cf046865a0.jpg";
   return (
     <View>
-      <ImageBackground
-        source={{ uri: cardImage }}
-        style={styles.cardImageStyles}
-        imageStyle={styles.borderImageStyle}
+      <TouchableOpacity
+        onPress={() => {
+          {
+            router.push("/app/recommendations/programs");
+          }
+        }}
       >
-        <View style={styles.cardTopContainer}>
-          <View style={styles.durationIndicator}>
-            <View style={styles.durationContainer}>
-              <Text style={styles.durationText}>Duration</Text>
+        <ImageBackground
+          source={{ uri: props.cardImage }}
+          style={styles.cardImageStyles}
+          imageStyle={styles.borderImageStyle}
+        >
+          <View style={styles.cardTopContainer}>
+            <View style={styles.durationIndicator}>
+              <View style={styles.durationContainer}>
+                <Text style={styles.durationText}>Duration</Text>
+              </View>
+              <View style={styles.weeksContainer}>
+                <Text>{props.programDuration}</Text>
+              </View>
             </View>
-            <View style={styles.weeksContainer}>
-              <Text>12 Weeks</Text>
+            <View style={styles.resultsIndicator}>
+              <Text>{props.programType}</Text>
             </View>
           </View>
-          <View style={styles.resultsIndicator}>
-            <Text>Dry</Text>
+          <View style={styles.cardDescription}>
+            <HeaderBody2
+              headerText={props.headerText}
+              bodyText={props.bodyText}
+            />
           </View>
-        </View>
-        <View style={styles.cardDescription}>
-          <HeaderBody2 />
-        </View>
-      </ImageBackground>
+        </ImageBackground>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -40,11 +59,10 @@ const styles = StyleSheet.create({
     padding: 15,
     height: 600,
     width: 380,
-    borderRadius: 30,
     justifyContent: "space-between",
   },
   borderImageStyle: {
-    borderRadius: 30,
+    borderRadius: 40,
   },
   cardTopContainer: {
     display: "flex",
@@ -58,8 +76,8 @@ const styles = StyleSheet.create({
     paddingRight: 10,
     backgroundColor: "#EBE5DC",
     width: "100%",
-    height: 240,
-    borderRadius: 40,
+
+    borderRadius: 30,
   },
   resultsIndicator: {
     padding: 5,
@@ -80,7 +98,7 @@ const styles = StyleSheet.create({
     borderWidth: 1.5,
     borderColor: "#24221E",
     borderRadius: 30,
-    width: "40%",
+    width: "56%",
   },
   durationContainer: {
     backgroundColor: "#24221E",
@@ -89,6 +107,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     borderRadius: 30,
     width: "50%",
+    height: 40,
   },
   weeksContainer: {
     color: "#EBE5DC",

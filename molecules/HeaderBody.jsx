@@ -65,8 +65,6 @@ const styles = StyleSheet.create({
     backgroundColor: "black",
     width: "90%",
     alignSelf: "center",
-    marginTop: 20,
-    marginBottom: 20,
   },
   underline3: {
     height: 1,

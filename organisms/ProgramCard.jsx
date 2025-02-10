@@ -9,7 +9,7 @@ import { HeaderBody2 } from "../molecules/HeaderBody";
 import { useRouter } from "expo-router";
 import React from "react";
 
-const ProgramCard = () => {
+const ProgramCard = (props) => {
   const router = useRouter();
   const cardImage =
     "https://i.pinimg.com/474x/77/64/bd/7764bdc071f1907071e0a6cf046865a0.jpg";
@@ -41,7 +41,12 @@ const ProgramCard = () => {
             </View>
           </View>
           <View style={styles.cardDescription}>
-            <HeaderBody2 />
+            <HeaderBody2
+              headerText={"Routine Name"}
+              bodyText={
+                "Your are currently taking the KARE 001 Magic Repair routine"
+              }
+            />
           </View>
         </ImageBackground>
       </TouchableOpacity>
@@ -56,11 +61,10 @@ const styles = StyleSheet.create({
     padding: 15,
     height: 600,
     width: 380,
-    borderRadius: 30,
     justifyContent: "space-between",
   },
   borderImageStyle: {
-    borderRadius: 30,
+    borderRadius: 40,
   },
   cardTopContainer: {
     display: "flex",
@@ -74,8 +78,8 @@ const styles = StyleSheet.create({
     paddingRight: 10,
     backgroundColor: "#EBE5DC",
     width: "100%",
-    height: 240,
-    borderRadius: 40,
+
+    borderRadius: 30,
   },
   resultsIndicator: {
     padding: 5,
@@ -96,7 +100,7 @@ const styles = StyleSheet.create({
     borderWidth: 1.5,
     borderColor: "#24221E",
     borderRadius: 30,
-    width: "40%",
+    width: "56%",
   },
   durationContainer: {
     backgroundColor: "#24221E",
@@ -105,6 +109,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     borderRadius: 30,
     width: "50%",
+    height: 40,
   },
   weeksContainer: {
     color: "#EBE5DC",

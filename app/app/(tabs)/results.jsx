@@ -3,6 +3,44 @@ import SkinResults from "../../../components/resultsAssets/SkinResults";
 import ProgramCard from "../../../organisms/ProgramCard";
 import React from "react";
 
+const programRecommendations = [
+  {
+    id: "1",
+    heading: "Routine One",
+    description: "The Morning Magic routine aids your skin...",
+    duration: "12 Weeks",
+    skinType: "Dry",
+    image:
+      "https://i.pinimg.com/474x/77/64/bd/7764bdc071f1907071e0a6cf046865a0.jpg",
+  },
+  {
+    id: "2",
+    heading: "Routine Two",
+    description: "The Morning Magic routine aids your skin...",
+    duration: "8 Weeks",
+    skinType: "Dry",
+    image:
+      "https://i.pinimg.com/474x/77/64/bd/7764bdc071f1907071e0a6cf046865a0.jpg",
+  },
+  {
+    id: "3",
+    heading: "Routine Three",
+    description: "The Morning Magic routine aids your skin...",
+    duration: "6 Weeks",
+    skinType: "Dry",
+    image:
+      "https://i.pinimg.com/474x/77/64/bd/7764bdc071f1907071e0a6cf046865a0.jpg",
+  },
+  {
+    id: "4",
+    heading: "Routine Four",
+    description: "The Morning Magic routine aids your skin...",
+    duration: "9 Weeks",
+    skinType: "Dry",
+    image:
+      "https://i.pinimg.com/474x/77/64/bd/7764bdc071f1907071e0a6cf046865a0.jpg",
+  },
+];
 const results = () => {
   return (
     <ScrollView contentContainerStyle={styles.container}>

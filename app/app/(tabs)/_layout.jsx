@@ -5,12 +5,23 @@ export default function TabsLayout() {
   return (
     <Tabs>
       <Tabs.Screen
+        name="routines"
+        options={{
+          href: null,
+        }}
+      />
+      <Tabs.Screen
         name="assessment"
         options={{
           href: null,
         }}
       />
-
+      <Tabs.Screen
+        name="programs"
+        options={{
+          href: null,
+        }}
+      />
       <Tabs.Screen
         name="tabsAppIndex"
         options={{

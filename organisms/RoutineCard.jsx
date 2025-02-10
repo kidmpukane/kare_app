@@ -7,42 +7,50 @@ import {
 } from "react-native";
 import { HeaderBody3 } from "../molecules/HeaderBody";
 import { FontAwesome } from "@expo/vector-icons";
+import { useRouter } from "expo-router";
 import React from "react";
 
 const RoutineCard = (props) => {
+  const router = useRouter();
   const cardImage =
     "https://i.pinimg.com/474x/47/16/0b/47160bc6ba111b50084c244853a03744.jpg";
   return (
     <View>
-      <ImageBackground
-        source={{ uri: cardImage }}
-        style={styles.cardImageStyles}
-        imageStyle={styles.borderImageStyle}
+      <TouchableOpacity
+        onPress={() => {
+          router.push("/app/recommendations/routines");
+        }}
       >
-        <View style={styles.cardTopContainer}>
-          <View style={styles.durationIndicator}>
-            <View style={styles.durationContainer}>
-              <Text style={styles.durationText}>{props.start}</Text>
-            </View>
-            <View style={styles.weeksContainer}>
-              <Text>{props.finish}</Text>
-            </View>
-          </View>
-        </View>
-        <View style={styles.cardBottomContainer}>
-          <View style={styles.cardDescription}>
-            <HeaderBody3
-              headerText={props.routineName}
-              bodyText={props.routineDescription}
-            />
-          </View>
-          <View style={styles.moreInfo}>
-            <View style={styles.moreBorderInfo}>
-              <FontAwesome name="angle-right" size={24} color="#EBE5DC" />
+        <ImageBackground
+          source={{ uri: cardImage }}
+          style={styles.cardImageStyles}
+          imageStyle={styles.borderImageStyle}
+        >
+          <View style={styles.cardTopContainer}>
+            <View style={styles.durationIndicator}>
+              <View style={styles.durationContainer}>
+                <Text style={styles.durationText}>{props.start}</Text>
+              </View>
+              <View style={styles.weeksContainer}>
+                <Text>{props.finish}</Text>
+              </View>
             </View>
           </View>
-        </View>
-      </ImageBackground>
+          <View style={styles.cardBottomContainer}>
+            <View style={styles.cardDescription}>
+              <HeaderBody3
+                headerText={props.routineName}
+                bodyText={props.routineDescription}
+              />
+            </View>
+            <View style={styles.moreInfo}>
+              <View style={styles.moreBorderInfo}>
+                <FontAwesome name="angle-right" size={24} color="#EBE5DC" />
+              </View>
+            </View>
+          </View>
+        </ImageBackground>
+      </TouchableOpacity>
     </View>
   );
 };

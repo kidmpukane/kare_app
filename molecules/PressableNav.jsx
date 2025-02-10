@@ -2,14 +2,11 @@ import { Pressable, StyleSheet, Text, View } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
 import React from "react";
 
-const PressableNav = () => {
+const PressableNav = (props) => {
   return (
     <View style={styles.pressableViewStyles}>
-      <Pressable
-        style={styles.pressableStyles}
-        onPress={() => alert("Pressable Nav")}
-      >
-        <Text style={styles.pressableTextStyle}>Pressable Nav</Text>
+      <Pressable style={styles.pressableStyles} onPress={props.onPress}>
+        <Text style={styles.pressableTextStyle}>{props.buttonName}</Text>
         <View style={styles.iconViewStyle}>
           <FontAwesome
             style={styles.iconStyle}
@@ -22,19 +19,19 @@ const PressableNav = () => {
   );
 };
 
-const PressableNav2 = () => {
+const PressableNav2 = (props) => {
   return (
     <View style={styles.pressableViewStyles}>
-      <Pressable
-        style={styles.pressableStyles2}
-        onPress={() => alert("Pressable Nav2")}
-      >
-        <Text style={styles.pressableTextStyle}>Pressable Nav</Text>
-        <View style={styles.iconViewStyle}>
+      <Pressable style={styles.pressableStyles2} onPress={props.onPress}>
+        <View style={styles.textUnderline}>
+          <Text style={styles.pressableTextStyle2}>{props.buttonName}</Text>
+          <View style={styles.underline2} />
+        </View>
+        <View style={styles.iconViewStyle2}>
           <FontAwesome
-            style={styles.iconStyle}
-            name="long-arrow-right"
-            size={10} // Adjust size as needed
+            style={styles.iconStyle2}
+            name="angle-right"
+            size={15} // Adjust size as needed
           />
         </View>
       </Pressable>
@@ -42,14 +39,11 @@ const PressableNav2 = () => {
   );
 };
 
-const PressableNav3 = () => {
+const PressableNav3 = (props) => {
   return (
     <View style={styles.pressableViewStyles}>
-      <Pressable
-        style={styles.pressableStyles3}
-        onPress={() => alert("Pressable Nav2")}
-      >
-        <Text style={styles.pressableTextStyle3}>Pressable Nav</Text>
+      <Pressable style={styles.pressableStyles3} onPress={props.onPress}>
+        <Text style={styles.pressableTextStyle3}>{props.buttonName}</Text>
         <View style={styles.iconViewStyle}>
           <FontAwesome
             style={styles.iconStyle}
@@ -62,18 +56,15 @@ const PressableNav3 = () => {
   );
 };
 
-const PressableNav4 = () => {
+const PressableNav4 = (props) => {
   return (
     <View style={styles.pressableViewStyles4}>
-      <Pressable
-        style={styles.pressableStyles4}
-        onPress={() => alert("Pressable Nav2")}
-      >
-        <Text style={styles.pressableTextStyle4}>Pressable Nav</Text>
+      <Pressable style={styles.pressableStyles4} onPress={props.onPress}>
+        <Text style={styles.pressableTextStyle4}>{props.buttonName}</Text>
         <View style={styles.underline} />
         <View style={styles.iconViewStyle4}>
           <FontAwesome
-            style={styles.iconStyle4}
+            style={styles.iconStyle}
             name="angle-right"
             size={10} // Adjust size as needed
           />
@@ -120,12 +111,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
     flexDirection: "row",
-    borderRadius: 40,
+    borderRadius: 30,
     fontSize: 14,
-    padding: 5,
-    backgroundColor: "#FFFFFF",
+    padding: 20,
+    backgroundColor: "#24221E",
     borderWidth: 1,
-    borderColor: "#24221E",
+    borderColor: "#EBE5DC",
   },
   pressableStyles4: {
     alignItems: "center",
@@ -139,6 +130,11 @@ const styles = StyleSheet.create({
   },
   pressableTextStyle: {
     marginLeft: 20, // Moves the text 10 units to the right
+  },
+  pressableTextStyle2: {
+    marginLeft: 20,
+    fontSize: 20,
+    color: "#EBE5DC",
   },
   pressableTextStyle3: {
     marginLeft: 20,
@@ -157,6 +153,14 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
+  iconViewStyle2: {
+    width: 45,
+    height: 45,
+    borderRadius: 50,
+    backgroundColor: "#EBE5DC",
+    justifyContent: "center",
+    alignItems: "center",
+  },
   iconViewStyle4: {
     width: 20,
     height: 20,
@@ -169,8 +173,8 @@ const styles = StyleSheet.create({
     color: "#EBE5DC",
   },
 
-  iconStyle4: {
-    color: "#EBE5DC",
+  iconStyle2: {
+    color: "#24221E",
   },
 
   underline: {
@@ -180,5 +184,14 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     marginTop: 2,
     marginBottom: 2,
+  },
+  underline2: {
+    height: 1,
+    backgroundColor: "#EBE5DC",
+    width: 200,
+    alignSelf: "center",
+    marginTop: 10,
+    marginBottom: 4,
+    marginLeft: "5%",
   },
 });

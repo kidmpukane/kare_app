@@ -1,5 +1,9 @@
 import { StyleSheet, Text, View } from "react-native";
-import { HeaderBody2 } from "../../molecules/HeaderBody";
+import {
+  HeaderBody2,
+  HeaderBody3,
+  HeaderBody,
+} from "../../molecules/HeaderBody";
 import { PressableNav2 } from "../../molecules/PressableNav";
 import React from "react";
 
@@ -11,13 +15,28 @@ const SkinResults = () => {
           <Text>Results</Text>
         </View>
         <View>
-          <HeaderBody2 />
+          <HeaderBody
+            headerText={"Skin Results"}
+            bodyText={
+              "Complete a quick examination, to find the perfect routine.The app processes this information and provides an overview of a personalised skincare routine."
+            }
+          />
         </View>
       </View>
       <View style={styles.underline} />
       <View style={styles.resultsBottomContainer}>
-        <PressableNav2 />
-        <PressableNav2 />
+        <PressableNav2
+          onPress={() => {
+            alert("Take Test Pressed");
+          }}
+          buttonName={"Take A Skin Test"}
+        />
+        <PressableNav2
+          onPress={() => {
+            alert("Alternative Programs Pressed");
+          }}
+          buttonName={"Alternative Programs"}
+        />
       </View>
     </View>
   );
@@ -27,9 +46,8 @@ export default SkinResults;
 
 const styles = StyleSheet.create({
   resultsContainer: {
-    padding: 10,
-    borderWidth: 1.5,
-    borderColor: "#24221E",
+    padding: 20,
+    backgroundColor: "#24221E",
     borderRadius: 30,
   },
   resultsIndicator: {

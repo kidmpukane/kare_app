@@ -1,44 +1,32 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 
-const HeaderBody = () => {
+const HeaderBody = (props) => {
   return (
     <View>
-      <Text style={styles.headerStyles}>Header</Text>
+      <Text style={styles.headerStyles}>{props.headerText}</Text>
       <View style={styles.underline3} />
-      <Text style={styles.bodyStyle}>
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text ever
-        since the 1500s, when an unknown printer took a galley of type and
-        scrambled it to make a type specimen book.
-      </Text>
+      <Text style={styles.bodyStyle}>{props.bodyText}</Text>
     </View>
   );
 };
 
-const HeaderBody2 = () => {
+const HeaderBody2 = (props) => {
   return (
     <View>
-      <Text style={styles.headerStyles2}>Header</Text>
+      <Text style={styles.headerStyles2}>{props.headerText}</Text>
       <View style={styles.underline} />
-      <Text style={styles.bodyStyle2}>
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text ever
-        since the 1500s.
-      </Text>
+      <Text style={styles.bodyStyle2}>{props.bodyText}</Text>
     </View>
   );
 };
 
-const HeaderBody3 = () => {
+const HeaderBody3 = (props) => {
   return (
     <View>
-      <Text style={styles.headerStyles3}>Header</Text>
+      <Text style={styles.headerStyles3}>{props.headerText}</Text>
       <View style={styles.underline3} />
-      <Text style={styles.bodyStyle}>
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry.
-      </Text>
+      <Text style={styles.bodyStyle}>{props.bodyText}</Text>
     </View>
   );
 };

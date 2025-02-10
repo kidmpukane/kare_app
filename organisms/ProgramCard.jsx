@@ -23,7 +23,7 @@ const ProgramCard = (props) => {
         }}
       >
         <ImageBackground
-          source={{ uri: cardImage }}
+          source={{ uri: props.cardImage }}
           style={styles.cardImageStyles}
           imageStyle={styles.borderImageStyle}
         >
@@ -33,19 +33,17 @@ const ProgramCard = (props) => {
                 <Text style={styles.durationText}>Duration</Text>
               </View>
               <View style={styles.weeksContainer}>
-                <Text>12 Weeks</Text>
+                <Text>{props.programDuration}</Text>
               </View>
             </View>
             <View style={styles.resultsIndicator}>
-              <Text>Dry</Text>
+              <Text>{props.programType}</Text>
             </View>
           </View>
           <View style={styles.cardDescription}>
             <HeaderBody2
-              headerText={"Routine Name"}
-              bodyText={
-                "Your are currently taking the KARE 001 Magic Repair routine"
-              }
+              headerText={props.headerText}
+              bodyText={props.bodyText}
             />
           </View>
         </ImageBackground>

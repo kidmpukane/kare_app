@@ -42,6 +42,8 @@ const programRecommendations = [
   },
 ];
 const results = () => {
+  const item = programRecommendations;
+
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <SkinResults />
@@ -53,12 +55,17 @@ const results = () => {
         showsHorizontalScrollIndicator={false}
         contentContainerStyle={styles.recommendationsContainer}
       >
-        <ProgramCard />
-        <ProgramCard />
-        <ProgramCard />
-        <ProgramCard />
-        <ProgramCard />
-        <ProgramCard />
+        {item.map((item) => (
+          <ProgramCard
+            key={item.id}
+            id={item.id}
+            headerText={item.heading}
+            bodyText={item.description}
+            programDuration={item.duration}
+            programType={item.skinType}
+            cardImage={item.image}
+          />
+        ))}
       </ScrollView>
     </ScrollView>
   );

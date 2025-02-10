@@ -49,8 +49,8 @@ const styles = StyleSheet.create({
   resultsContainer: {
     paddingTop: 20,
     paddingBottom: 20,
-    paddingLeft: 6,
-    paddingRight: 6,
+    // paddingLeft: 2,
+    // paddingRight: 2,
     backgroundColor: "#24221E",
     borderRadius: 30,
   },
@@ -70,6 +70,7 @@ const styles = StyleSheet.create({
   resultsTopContainer: {
     display: "flex",
     justifyContent: "space-between",
+    padding: 20,
   },
   underline: {
     height: 1,

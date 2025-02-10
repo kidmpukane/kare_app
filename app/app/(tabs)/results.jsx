@@ -7,9 +7,9 @@ const results = () => {
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <SkinResults />
+
       <Text style={styles.resultText}>Program Recommendations</Text>
       <View style={styles.underline} />
-      {/* Wrap recommendations in a horizontal ScrollView */}
       <ScrollView
         horizontal
         showsHorizontalScrollIndicator={false}
@@ -31,11 +31,12 @@ export default results;
 const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
+    gap: 10,
     justifyContent: "center",
     alignItems: "center",
     paddingTop: 20,
-    paddingLeft: 2,
-    paddingRight: 2,
+    paddingLeft: 1,
+    paddingRight: 1,
     paddingBottom: 20,
   },
   underline: {

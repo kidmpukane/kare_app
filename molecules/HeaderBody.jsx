@@ -5,8 +5,9 @@ const HeaderBody = (props) => {
   return (
     <View>
       <Text style={styles.headerStyles}>{props.headerText}</Text>
-      <View style={styles.underline3} />
-      <Text style={styles.bodyStyle}>{props.bodyText}</Text>
+      <View style={styles.bodyStyleContainer}>
+        <Text style={styles.bodyStyle}>{props.bodyText}</Text>
+      </View>
     </View>
   );
 };
@@ -74,5 +75,9 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     marginTop: 2,
     marginBottom: 2,
+  },
+  bodyStyleContainer: {
+    paddingTop: 2,
+    paddingBottom: 2,
   },
 });

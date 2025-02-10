@@ -6,7 +6,7 @@ import React from "react";
 const routines = () => {
   return (
     <ScrollView contentContainerStyle={styles.routinesContainer}>
-      <ProgramTop />
+      <ProgramTop onPress={() => alert("Purchase Entire Routine")} />
       <View style={styles.underline} />
       <ProgramBottom />
     </ScrollView>

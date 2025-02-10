@@ -16,7 +16,10 @@ const PurchaseAllCard = () => {
         <View style={styles.cardTopContainer}></View>
         <View style={styles.cardBottomContainer}>
           <View style={styles.cardDescription}>
-            <HeaderBody3 />
+            <HeaderBody3
+              headerText="Routine Steps"
+              bodyText="Follow the instructions below to complete the routine, Additionally click on the boxes for more info"
+            />
           </View>
         </View>
       </ImageBackground>

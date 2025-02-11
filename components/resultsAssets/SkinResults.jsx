@@ -5,9 +5,11 @@ import {
   HeaderBody,
 } from "../../molecules/HeaderBody";
 import { PressableNav2 } from "../../molecules/PressableNav";
+import { useRouter } from "expo-router";
 import React from "react";
 
 const SkinResults = () => {
+  const router = useRouter();
   return (
     <View style={styles.resultsContainer}>
       <View style={styles.resultsTopContainer}>
@@ -28,7 +30,7 @@ const SkinResults = () => {
       <View style={styles.resultsBottomContainer}>
         <PressableNav2
           onPress={() => {
-            alert("Take Test Pressed");
+            router.push("app/forms/questionnaire");
           }}
           buttonName={"Take A Skin Test"}
         />

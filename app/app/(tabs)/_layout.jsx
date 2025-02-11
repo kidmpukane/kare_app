@@ -11,12 +11,6 @@ export default function TabsLayout() {
         }}
       />
       <Tabs.Screen
-        name="assessment"
-        options={{
-          href: null,
-        }}
-      />
-      <Tabs.Screen
         name="programs"
         options={{
           href: null,

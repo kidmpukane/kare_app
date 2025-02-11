@@ -7,13 +7,22 @@ const ProfileBottom = () => {
   return (
     <View style={styles.programContainer}>
       <View style={styles.headBodyStyles}>
-        <HeaderBody />
+        <HeaderBody
+          headerText="Programs"
+          bodyText="Theses are the programs you are currently enrolled in, as well as the suggested alternatives."
+        />
       </View>
       <View>
-        <PressableNav />
+        <PressableNav
+          buttonName="Current Programs"
+          onPress={() => alert("Current Programs")}
+        />
       </View>
       <View>
-        <PressableNav />
+        <PressableNav
+          buttonName="Alternative Programs"
+          onPress={() => alert("Alternative Programs")}
+        />
       </View>
     </View>
   );

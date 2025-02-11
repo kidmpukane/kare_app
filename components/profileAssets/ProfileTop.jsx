@@ -17,8 +17,14 @@ const ProfileTop = () => {
       >
         <View style={styles.overlay} />
         <View style={styles.textContainer}>
-          <HeaderBody />
-          <PressableNav />
+          <HeaderBody
+            headerText="Progress Images"
+            bodyText="Store a collection of your images to keep track of your progress overtime."
+          />
+          <PressableNav
+            buttonName="Upload Images To Track Progress"
+            onPress={() => alert("Upload Images")}
+          />
         </View>
       </ImageBackground>
     </View>

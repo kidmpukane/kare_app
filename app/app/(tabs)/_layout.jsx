@@ -29,18 +29,19 @@ export default function TabsLayout() {
           tabBarIcon: () => <FontAwesome name="home" />,
         }}
       />
-      <Tabs.Screen
-        name="profile"
-        options={{
-          title: "Profile",
-          tabBarIcon: () => <FontAwesome name="user" />,
-        }}
-      />
+
       <Tabs.Screen
         name="results"
         options={{
           title: "Results",
           tabBarIcon: () => <FontAwesome name="pie-chart" />,
+        }}
+      />
+      <Tabs.Screen
+        name="profile"
+        options={{
+          title: "Profile",
+          tabBarIcon: () => <FontAwesome name="user" />,
         }}
       />
     </Tabs>

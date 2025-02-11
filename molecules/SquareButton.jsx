@@ -20,7 +20,7 @@ const SquareButton = (props) => {
         changeColour();
       }}
     >
-      <Text style={styles.buttonText}>{props.squareButtonText}</Text>
+      <Text style={styles.buttonText}>"1"</Text>
     </TouchableOpacity>
   );
 };
@@ -29,26 +29,30 @@ export default SquareButton;
 
 const styles = StyleSheet.create({
   squareButton: {
+    padding: 25,
     fontSize: 5,
     width: 12,
     height: 16,
-    borderRadius: 20,
-    backgroundColor: "#EBE5DC",
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: "#EBE5DC",
     justifyContent: "center",
     alignItems: "center",
   },
   greenButton: {
-    fontSize: 5,
+    padding: 25,
+    fontSize: 10,
     width: 12,
     height: 16,
     flexShrink: 0,
-    borderRadius: 20,
-    color: "#EBE5DC",
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: "#EBE5DC",
     backgroundColor: "#868365",
     justifyContent: "center",
     alignItems: "center",
   },
   buttonText: {
-    color: "#000",
+    color: "#EBE5DC",
   },
 });

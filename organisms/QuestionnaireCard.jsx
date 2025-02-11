@@ -13,12 +13,19 @@ const QuestionnaireCard = () => {
           console.log("Questionnaire Pressed");
         }}
       />
-      <View>
+      <View style={styles.formCardContainer}>
         <HeaderBody
           headerText="Questionnaire"
           bodyText="Please answer the following questions to the best of your ability."
         />
-        <SquareButton squareButtonText="1" onPress={() => console.log("1")} />
+        <View style={styles.buttonContainer}>
+          <SquareButton squareButtonText="0" onPress={() => console.log("0")} />
+          <SquareButton squareButtonText="1" onPress={() => console.log("1")} />
+          <SquareButton squareButtonText="2" onPress={() => console.log("2")} />
+          <SquareButton squareButtonText="3" onPress={() => console.log("3")} />
+          <SquareButton squareButtonText="4" onPress={() => console.log("4")} />
+          <SquareButton squareButtonText="5" onPress={() => console.log("5")} />
+        </View>
       </View>
     </View>
   );
@@ -26,4 +33,16 @@ const QuestionnaireCard = () => {
 
 export default QuestionnaireCard;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  formCardContainer: {
+    backgroundColor: "#24221E",
+    padding: 20,
+    margin: 10,
+    borderRadius: 30,
+  },
+  buttonContainer: {
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+    marginTop: 20,
+  },
+});

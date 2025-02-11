@@ -6,6 +6,14 @@ const questionnaire = () => {
   return (
     <View>
       <QuestionnaireCard />
+      <QuestionnaireCard />
+      <QuestionnaireCard />
+      <QuestionnaireCard />
+      <QuestionnaireCard />
+      <QuestionnaireCard />
+      <QuestionnaireCard />
+      <QuestionnaireCard />
+      <QuestionnaireCard />
     </View>
   );
 };

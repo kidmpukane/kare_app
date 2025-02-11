@@ -45,15 +45,15 @@ export default QuestionnaireCard;
 
 const styles = StyleSheet.create({
   formCardContainer: {
+    display: "none",
+  },
+  formCardContainer2: {
     backgroundColor: "#24221E",
     padding: 20,
     margin: 10,
     borderRadius: 30,
     borderWidth: 1,
     borderColor: "#EBE5DC",
-  },
-  formCardContainer2: {
-    display: "none",
   },
   buttonContainer: {
     flexDirection: "row",

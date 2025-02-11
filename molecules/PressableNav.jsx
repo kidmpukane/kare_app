@@ -83,6 +83,8 @@ const PressableNav4 = (props) => {
 const PressableNav5 = (props) => {
   const [navStyle, setNavStyle] = useState(styles.pressableStyles4);
   const [txtStyle, setTxtStyle] = useState(styles.pressableTextStyle);
+  // const [bttnStyle, setBttnStyle] = useState(styles.iconViewStyle);
+  // const [bttnStyle2, setBttnStyle2] = useState(styles.iconStyle2);
   const changeColour = () => {
     setNavStyle((prevStyle) =>
       prevStyle == styles.pressableStyles4
@@ -92,9 +94,9 @@ const PressableNav5 = (props) => {
   };
   const changeTxtColour = () => {
     setTxtStyle((prevStyle) =>
-      prevStyle == styles.pressableTextStyle2
-        ? styles.pressableTextStyle5
-        : styles.pressableTextStyle2
+      prevStyle == styles.pressableTextStyle5
+        ? styles.pressableTextStyle2
+        : styles.pressableTextStyle5
     );
   };
 

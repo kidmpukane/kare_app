@@ -6,7 +6,8 @@ import {
   View,
 } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
-import React from "react";
+import { React, useState } from "react";
+import { useSafeAreaFrame } from "react-native-safe-area-context";
 
 const PressableNav = (props) => {
   return (
@@ -16,8 +17,8 @@ const PressableNav = (props) => {
         <View style={styles.iconViewStyle}>
           <FontAwesome
             style={styles.iconStyle}
-            name="long-arrow-right"
-            size={10} // Adjust size as needed
+            name="angle-right"
+            size={12} // Adjust size as needed
           />
         </View>
       </TouchableOpacity>
@@ -79,8 +80,54 @@ const PressableNav4 = (props) => {
     </View>
   );
 };
+const PressableNav5 = (props) => {
+  const [navStyle, setNavStyle] = useState(styles.pressableStyles4);
+  const [txtStyle, setTxtStyle] = useState(styles.pressableTextStyle);
+  const changeColour = () => {
+    setNavStyle((prevStyle) =>
+      prevStyle == styles.pressableStyles4
+        ? styles.pressableStyles
+        : styles.pressableStyles4
+    );
+  };
+  const changeTxtColour = () => {
+    setTxtStyle((prevStyle) =>
+      prevStyle == styles.pressableTextStyle2
+        ? styles.pressableTextStyle5
+        : styles.pressableTextStyle2
+    );
+  };
 
-export { PressableNav, PressableNav2, PressableNav3, PressableNav4 };
+  return (
+    <View style={styles.pressableViewStyles}>
+      <TouchableOpacity
+        style={navStyle}
+        onPress={() => {
+          props.onPress();
+          changeColour();
+          changeTxtColour();
+        }}
+      >
+        <Text style={txtStyle}>{props.buttonName}</Text>
+        <View style={styles.iconViewStyle}>
+          <FontAwesome
+            style={styles.iconStyle}
+            name="angle-right"
+            size={12} // Adjust size as needed
+          />
+        </View>
+      </TouchableOpacity>
+    </View>
+  );
+};
+
+export {
+  PressableNav,
+  PressableNav2,
+  PressableNav3,
+  PressableNav4,
+  PressableNav5,
+};
 
 const styles = StyleSheet.create({
   pressableViewStyles: {
@@ -144,6 +191,11 @@ const styles = StyleSheet.create({
     marginLeft: 20,
     fontSize: 20,
     color: "#EBE5DC",
+  },
+  pressableTextStyle5: {
+    marginLeft: 20,
+    fontSize: 20,
+    color: "#24221E",
   },
   pressableTextStyle3: {
     marginLeft: 20,

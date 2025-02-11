@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { TouchableOpacity, StyleSheet, Text } from "react-native";
+import { TouchableOpacity, StyleSheet, Text, View } from "react-native";
 
 const SquareButton = (props) => {
   const [bttnStyle, setBttnStyle] = useState(styles.squareButton);
@@ -13,15 +13,19 @@ const SquareButton = (props) => {
   };
 
   return (
-    <TouchableOpacity
-      style={bttnStyle}
-      onPress={() => {
-        props.onPress();
-        changeColour();
-      }}
-    >
-      <Text style={styles.buttonText}>"1"</Text>
-    </TouchableOpacity>
+    <View>
+      <TouchableOpacity
+        style={bttnStyle}
+        onPress={() => {
+          props.onPress();
+          changeColour();
+        }}
+      >
+        <View style={styles.textContainer}>
+          <Text style={styles.buttonText}>{props.squareButtonText}</Text>
+        </View>
+      </TouchableOpacity>
+    </View>
   );
 };
 
@@ -29,10 +33,7 @@ export default SquareButton;
 
 const styles = StyleSheet.create({
   squareButton: {
-    padding: 25,
-    fontSize: 5,
-    width: 12,
-    height: 16,
+    padding: 20,
     borderRadius: 10,
     borderWidth: 1,
     borderColor: "#EBE5DC",
@@ -40,11 +41,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   greenButton: {
-    padding: 25,
-    fontSize: 10,
-    width: 12,
-    height: 16,
-    flexShrink: 0,
+    padding: 20,
     borderRadius: 10,
     borderWidth: 1,
     borderColor: "#EBE5DC",
@@ -54,5 +51,6 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: "#EBE5DC",
+    fontSize: 20,
   },
 });

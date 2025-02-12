@@ -1,9 +1,11 @@
 import { StyleSheet, Text, View } from "react-native";
 import { HeaderBody } from "../../molecules/HeaderBody";
 import { PressableNav } from "../../molecules/PressableNav";
+import { useRouter } from "expo-router";
 import React from "react";
 
 const ProfileBottom = () => {
+  const router = useRouter();
   return (
     <View style={styles.programContainer}>
       <View style={styles.headBodyStyles}>
@@ -15,13 +17,13 @@ const ProfileBottom = () => {
       <View>
         <PressableNav
           buttonName="Current Programs"
-          onPress={() => alert("Current Programs")}
+          onPress={() => router.push("/app/recommendations/programs")}
         />
       </View>
       <View>
         <PressableNav
           buttonName="Alternative Programs"
-          onPress={() => alert("Alternative Programs")}
+          onPress={() => router.push("/app/results")}
         />
       </View>
     </View>

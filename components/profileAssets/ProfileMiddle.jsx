@@ -4,10 +4,10 @@ import {
   ReminderButtonSml,
 } from "../../molecules/ReminderButtons";
 import { React, useState } from "react";
-import { use } from "react";
 
 const ProfileMiddle = () => {
   const [time, useTime] = useState();
+
   return (
     <View style={styles.profileMiddleContainerStyles}>
       <Text style={styles.profileHeaderTxt}>Routine Reminders</Text>
@@ -18,16 +18,19 @@ const ProfileMiddle = () => {
           iconPm="coffee"
           timePm="06:00AM"
           routinePm="Sunrise Routine"
+          isActive={false}
         />
         <ReminderButtonSml
           iconPm="sun-o"
           timePm="12:00PM"
           routinePm="Sunrise Routine"
+          isActive={true}
         />
         <ReminderButtonSml
           iconPm="moon-o"
           timePm="22:00PM"
           routinePm="Evening Routine"
+          isActive={false}
         />
       </View>
     </View>

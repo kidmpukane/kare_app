@@ -11,13 +11,39 @@ const ReminderButtonLrg = () => {
     </View>
   );
 };
-const ReminderButtonSml = (props) => {
+const ReminderButtonSml = ({ iconPm, timePm, routinePm, isActive }) => {
   return (
     <View>
-      <View style={styles.reminderBtnSmlStyles}>
-        <FontAwesome name={props.iconPm} size={15} color={styles.iconStyles} />
-        <Text style={styles.reminderTxtSmlStyles}>{props.timePm}</Text>
-        <Text style={styles.reminderTxtSmlStyles2}>{props.routinePm}</Text>
+      <View
+        style={[
+          isActive
+            ? styles.reminderBtnSmlStylesAct
+            : styles.reminderBtnSmlStyles,
+        ]}
+      >
+        <FontAwesome
+          name={iconPm}
+          size={15}
+          color={isActive ? "#EBE5DC" : "#24221E"}
+        />
+        <Text
+          style={[
+            isActive
+              ? styles.reminderTxtSmlStylesAct
+              : styles.reminderTxtSmlStyles,
+          ]}
+        >
+          {timePm}
+        </Text>
+        <Text
+          style={[
+            isActive
+              ? styles.reminderBtnSmlStyles2Act
+              : styles.reminderTxtSmlStyles2,
+          ]}
+        >
+          {routinePm}
+        </Text>
       </View>
     </View>
   );
@@ -49,14 +75,17 @@ const styles = StyleSheet.create({
     fontSize: 6,
   },
   reminderBtnSmlStylesAct: {
-    borderWidth: 1,
-    borderColor: "#868365",
+    backgroundColor: "#868365",
     borderRadius: 15,
     padding: 20,
     alignItems: "center",
   },
   reminderTxtSmlStylesAct: {
     fontSize: 10,
+    color: "#EBE5DC",
+  },
+  reminderBtnSmlStyles2Act: {
+    fontSize: 6,
     color: "#EBE5DC",
   },
   iconStylesAct: {

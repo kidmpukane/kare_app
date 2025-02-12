@@ -4,6 +4,7 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 import SquareButton from "../molecules/SquareButton";
 import { HeaderBody } from "../molecules/HeaderBody";
+import { CustomButton1 } from "../molecules/CustomButtons";
 
 const questions = [
   {
@@ -48,7 +49,7 @@ const SurveyForm = () => {
           {questions.map(({ id, header, question }) => (
             <View key={id} style={{ marginBottom: 20 }}>
               <HeaderBody headerText={header} bodyText={question} />
-
+              <View style={styles.underline} />
               <View style={styles.buttonRow}>
                 {[0, 1, 2, 3, 4, 5].map((num) => (
                   <SquareButton
@@ -65,7 +66,7 @@ const SurveyForm = () => {
             </View>
           ))}
 
-          <Button title="Submit" onPress={handleSubmit} />
+          <CustomButton1 customButton1Text="Submit" onPress={handleSubmit} />
         </View>
       )}
     </Formik>
@@ -73,22 +74,16 @@ const SurveyForm = () => {
 };
 
 const styles = StyleSheet.create({
-  questionText: {
-    fontSize: 16,
-    fontWeight: "bold",
-    marginBottom: 8,
-  },
   buttonRow: {
     flexDirection: "row",
     justifyContent: "space-between",
-    marginBottom: 10,
   },
   errorText: {
     color: "red",
   },
   underline: {
     height: 1,
-    margin: 20,
+    margin: 10,
     backgroundColor: "#EBE5DC",
     width: "100%",
     alignSelf: "center",

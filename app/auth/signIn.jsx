@@ -1,16 +1,16 @@
-import { StyleSheet, Text, View, Button } from 'react-native'
-import { AuthenticationContext } from "../AuthContext"
-import { Link, useRouter } from 'expo-router';
+import { StyleSheet, Text, View, Button, Image } from "react-native";
+import { AuthenticationContext } from "../AuthContext";
+import { CustomButton2 } from "../../molecules/CustomButtons";
+import { Link, useRouter } from "expo-router";
 import { useContext } from "react";
+import * as Svg from "react-native-svg";
+import Logo from "../../assets/svg/Group 49.svg";
 
-import React from 'react'
-
+import React from "react";
 
 const signIn = () => {
   const router = useRouter();
   const { authInfo, updateAuthInfo } = useContext(AuthenticationContext);
-
-
 
   const handleSignIn = () => {
     updateAuthInfo({
@@ -22,19 +22,32 @@ const signIn = () => {
     router.push("/app/(tabs)/home");
   };
   return (
-		<View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-			<Button title="Sign In" onPress={handleSignIn} />
-			<Button title="Sign Up" onPress={() => router.push('/auth/signUp')} />
+    <View style={styles.container}>
+      <Image source={Logo} style={styles.background} resizeMode="cover" />
+      <CustomButton2 customButton2Text="Sign In" onPress={handleSignIn} />
+      <CustomButton2
+        customButton2Text="Sign Up"
+        onPress={() => router.push("/auth/signUp")}
+      />
+    </View>
+  );
+};
 
-			{/* <Link href="/test">Unmatched route</Link> */}
-		</View>
-  )
-}
+export default signIn;
 
-export default signIn
-
-const styles = StyleSheet.create({})
-
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    gap: 10,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#EEC9B5",
+  },
+  background: {
+    justifyContent: "center",
+    alignItems: "center",
+  },
+});
 
 // import React, { useContext, useState } from "react";
 // import { Headings, Texts } from "../components/atoms/headings";

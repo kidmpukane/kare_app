@@ -1,22 +1,25 @@
-import { StyleSheet, Text, View, Button } from 'react-native'
-import { Link, useRouter } from 'expo-router';
-import React from 'react'
+import { StyleSheet, Text, View, Button } from "react-native";
+import { CustomButton2 } from "../../molecules/CustomButtons";
+import { Link, useRouter } from "expo-router";
+import React from "react";
 
 const signUp = () => {
   const router = useRouter();
 
   return (
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>signUp</Text>
-      <Button title="Sign In" onPress={() => router.push('/auth/signIn')} />
-      
+    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+      <Text>Account Registrations</Text>
+      <CustomButton2
+        customButton2Text="Sign In"
+        onPress={() => router.push("/auth/signIn")}
+      />
     </View>
-  )
-}
+  );
+};
 
-export default signUp
+export default signUp;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({});
 
 // import React, { useContext, useState } from "react";
 // import axios from "axios";

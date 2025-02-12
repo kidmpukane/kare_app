@@ -1,14 +1,24 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { ScrollView, StyleSheet, Text, View } from "react-native";
+import SurveyForm from "../../../forms/SurveyForm";
+import React from "react";
 
 const assessment = () => {
   return (
-    <View>
+    <ScrollView contentContainerStyle={styles.container}>
       <Text>assessment</Text>
-    </View>
-  )
-}
+      <SurveyForm />
+    </ScrollView>
+  );
+};
 
-export default assessment
+export default assessment;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  container: {
+    flexGrow: 1,
+    gap: 10,
+    justifyContent: "center",
+    alignItems: "center",
+    padding: 2,
+  },
+});

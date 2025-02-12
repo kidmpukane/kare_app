@@ -1,10 +1,19 @@
 import { StyleSheet, Text, View } from "react-native";
+import QuestionnaireCard from "../../../organisms/QuestionnaireCard";
 import React from "react";
 
 const questionnaire = () => {
   return (
     <View>
-      <Text>questionnaire</Text>
+      <QuestionnaireCard />
+      <QuestionnaireCard />
+      <QuestionnaireCard />
+      <QuestionnaireCard />
+      <QuestionnaireCard />
+      <QuestionnaireCard />
+      <QuestionnaireCard />
+      <QuestionnaireCard />
+      <QuestionnaireCard />
     </View>
   );
 };

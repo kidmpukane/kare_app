@@ -30,7 +30,7 @@ const SkinResults = () => {
       <View style={styles.resultsBottomContainer}>
         <PressableNav2
           onPress={() => {
-            router.push("app/forms/questionnaire");
+            router.push("app/forms/assessment");
           }}
           buttonName={"Take A Skin Test"}
         />

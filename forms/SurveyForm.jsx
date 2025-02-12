@@ -3,11 +3,24 @@ import { View, Text, Button, StyleSheet } from "react-native";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import SquareButton from "../molecules/SquareButton";
+import { HeaderBody } from "../molecules/HeaderBody";
 
 const questions = [
-  { id: "q1", question: "How satisfied are you with our service?" },
-  { id: "q2", question: "How likely are you to recommend us?" },
-  { id: "q3", question: "How easy was it to use our platform?" },
+  {
+    id: "q1",
+    header: "Satisfaction",
+    question: "How satisfied are you with our service?",
+  },
+  {
+    id: "q2",
+    header: "Recommendation",
+    question: "How likely are you to recommend us?",
+  },
+  {
+    id: "q3",
+    header: "Usability",
+    question: "How easy was it to use our platform?",
+  },
 ];
 
 const validationSchema = Yup.object().shape(
@@ -32,9 +45,9 @@ const SurveyForm = () => {
     >
       {({ handleSubmit, values, errors, setFieldValue }) => (
         <View style={{ padding: 20 }}>
-          {questions.map(({ id, question }) => (
+          {questions.map(({ id, header, question }) => (
             <View key={id} style={{ marginBottom: 20 }}>
-              <Text style={styles.questionText}>{question}</Text>
+              <HeaderBody headerText={header} bodyText={question} />
 
               <View style={styles.buttonRow}>
                 {[0, 1, 2, 3, 4, 5].map((num) => (

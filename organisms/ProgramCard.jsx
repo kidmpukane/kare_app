@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "pink",
+    backgroundColor: "#EEC9B5",
     width: "20%",
   },
   durationIndicator: {

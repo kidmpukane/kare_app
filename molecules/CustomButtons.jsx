@@ -4,14 +4,14 @@ import React from "react";
 const CustomButton1 = (props) => {
   return (
     <TouchableOpacity style={styles.buttonOneStyles} onPress={props.onPress}>
-      <Text style={styles.buttonOneTextStyles}>{props.customButton1Text}</Text>
+      <Text style={styles.buttonTextStyles}>{props.customButton1Text}</Text>
     </TouchableOpacity>
   );
 };
 const CustomButton2 = (props) => {
   return (
     <TouchableOpacity style={styles.buttonTwoStyles} onPress={props.onPress}>
-      <Text style={styles.buttonTwoTextStyles}>{props.customButton2Text}</Text>
+      <Text style={styles.buttonTextStyles}>{props.customButton2Text}</Text>
     </TouchableOpacity>
   );
 };
@@ -25,7 +25,14 @@ const styles = StyleSheet.create({
     backgroundColor: "#EEC9B5",
     alignItems: "center",
   },
-  buttonOneTextStyles: {},
-  buttonTwoStyles: {},
-  buttonTwoTextStyles: {},
+  buttonTextStyles: {
+    fontSize: 16,
+    color: "#24221E",
+  },
+  buttonTwoStyles: {
+    padding: 15,
+    borderRadius: 50,
+    backgroundColor: "#EBE5DC",
+    alignItems: "center",
+  },
 });

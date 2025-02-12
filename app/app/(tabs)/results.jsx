@@ -1,7 +1,8 @@
 import { StyleSheet, Text, View, ScrollView } from "react-native";
 import SkinResults from "../../../components/resultsAssets/SkinResults";
 import ProgramCard from "../../../organisms/ProgramCard";
-import React from "react";
+import { CustomButton3 } from "../../../molecules/CustomButtons";
+import { React, useState } from "react";
 
 const programRecommendations = [
   {
@@ -43,12 +44,33 @@ const programRecommendations = [
 ];
 const results = () => {
   const item = programRecommendations;
+  const [selectedFilter, setSelectedFilter] = useState(null); // Track selected filter
 
+  const filters = ["Dry", "Normal", "Oily", "Mixed", "Sensitive"];
+
+  const handleFilterPress = (filter) => {
+    setSelectedFilter(filter); // Update selected filter
+  };
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <SkinResults />
 
-      <Text style={styles.resultText}>Program Recommendations</Text>
+      <ScrollView
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        contentContainerStyle={styles.filterContainer}
+      >
+        {filters.map((filter) => (
+          <CustomButton3
+            key={filter}
+            customButtonText={filter}
+            onPress={() => handleFilterPress(filter)}
+            isSelected={selectedFilter === filter} // Highlight selected button
+          />
+        ))}
+      </ScrollView>
+
+      <Text style={styles.resultText}>Recommendations</Text>
       <View style={styles.underline} />
       <ScrollView
         horizontal
@@ -77,25 +99,34 @@ const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
     gap: 10,
-    justifyContent: "center",
-    alignItems: "center",
     paddingTop: 20,
-    paddingLeft: 1,
-    paddingRight: 1,
+    paddingLeft: 5,
+    paddingRight: 5,
     paddingBottom: 20,
     backgroundColor: "#EBE5DC",
+  },
+  customButtonContainer: {
+    display: "flex",
+    flexDirection: "row",
+    gap: 4,
   },
   underline: {
     height: 1.5,
     backgroundColor: "#24221E",
     width: "90%",
     alignSelf: "center",
-    marginTop: 20,
-    marginBottom: 20,
+    marginTop: 10,
+    marginBottom: 10,
   },
   resultText: {
     fontSize: 40,
     padding: 10,
+  },
+  filterContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    padding: 20,
+    gap: 6,
   },
   recommendationsContainer: {
     flexDirection: "row",

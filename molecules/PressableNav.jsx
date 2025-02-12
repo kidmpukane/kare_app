@@ -30,10 +30,7 @@ const PressableNav2 = (props) => {
   return (
     <View style={styles.pressableViewStyles}>
       <TouchableOpacity style={styles.pressableStyles2} onPress={props.onPress}>
-        <View style={styles.textUnderline}>
-          <Text style={styles.pressableTextStyle2}>{props.buttonName}</Text>
-          <View style={styles.underline2} />
-        </View>
+        <Text style={styles.pressableTextStyle2}>{props.buttonName}</Text>
         <View style={styles.iconViewStyle2}>
           <FontAwesome
             style={styles.iconStyle2}
@@ -166,12 +163,9 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
     flexDirection: "row",
-    borderRadius: 25,
+    borderRadius: 50,
     fontSize: 14,
-    paddingTop: 14,
-    paddingBottom: 14,
-    paddingLeft: 5,
-    paddingRight: 5,
+    padding: 2,
     backgroundColor: "#24221E",
     borderWidth: 1,
     borderColor: "#EBE5DC",
@@ -220,7 +214,7 @@ const styles = StyleSheet.create({
     width: 55,
     height: 55,
     borderRadius: 50,
-    backgroundColor: "#EBE5DC",
+    backgroundColor: "#EEC9B5",
     justifyContent: "center",
     alignItems: "center",
   },

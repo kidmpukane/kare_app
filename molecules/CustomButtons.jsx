@@ -16,7 +16,25 @@ const CustomButton2 = (props) => {
   );
 };
 
-export { CustomButton1, CustomButton2 };
+const CustomButton3 = ({ onPress, isSelected, customButtonText }) => {
+  return (
+    <TouchableOpacity
+      style={[styles.buttonThreeStyles, isSelected && styles.buttonTwoStyles]}
+      onPress={onPress}
+    >
+      <Text
+        style={[
+          styles.buttonTextStyles,
+          isSelected && styles.buttonTextStyles2,
+        ]}
+      >
+        {customButtonText}
+      </Text>
+    </TouchableOpacity>
+  );
+};
+
+export { CustomButton1, CustomButton2, CustomButton3 };
 
 const styles = StyleSheet.create({
   buttonOneStyles: {
@@ -39,6 +57,15 @@ const styles = StyleSheet.create({
     paddingRight: 35,
     borderRadius: 50,
     backgroundColor: "#24221E",
+    alignItems: "center",
+  },
+  buttonThreeStyles: {
+    padding: 15,
+    paddingLeft: 35,
+    paddingRight: 35,
+    borderRadius: 50,
+    borderWidth: 1.2,
+    borderColor: "#24221E",
     alignItems: "center",
   },
 });

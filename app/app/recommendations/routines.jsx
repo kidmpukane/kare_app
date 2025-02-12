@@ -73,6 +73,7 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     padding: 10,
     gap: 2,
+    backgroundColor: "#EBE5DC",
   },
   underline: {
     height: 1,

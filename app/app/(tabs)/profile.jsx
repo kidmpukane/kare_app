@@ -36,6 +36,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     paddingBottom: 20,
+    backgroundColor: "#EBE5DC",
   },
   profileText: {
     fontSize: 18,

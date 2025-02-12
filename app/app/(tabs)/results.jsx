@@ -83,6 +83,7 @@ const styles = StyleSheet.create({
     paddingLeft: 1,
     paddingRight: 1,
     paddingBottom: 20,
+    backgroundColor: "#EBE5DC",
   },
   underline: {
     height: 1.5,

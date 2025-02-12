@@ -58,6 +58,7 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     justifyContent: "center",
     alignItems: "center",
+    backgroundColor: "#EBE5DC",
     padding: 10,
     gap: 10,
   },

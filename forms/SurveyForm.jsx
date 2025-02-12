@@ -59,6 +59,7 @@ const SurveyForm = () => {
                   />
                 ))}
               </View>
+              <View style={styles.underline} />
 
               {errors[id] && <Text style={styles.errorText}>{errors[id]}</Text>}
             </View>
@@ -84,6 +85,13 @@ const styles = StyleSheet.create({
   },
   errorText: {
     color: "red",
+  },
+  underline: {
+    height: 1,
+    margin: 20,
+    backgroundColor: "#EBE5DC",
+    width: "100%",
+    alignSelf: "center",
   },
 });
 

@@ -8,7 +8,9 @@ const SquareButton = ({ onPress, isSelected, squareButtonText }) => {
       onPress={onPress}
     >
       <View style={styles.textContainer}>
-        <Text style={styles.buttonText}>{squareButtonText}</Text>
+        <Text style={[styles.buttonText, isSelected && styles.buttonText2]}>
+          {squareButtonText}
+        </Text>
       </View>
     </TouchableOpacity>
   );
@@ -17,19 +19,26 @@ const SquareButton = ({ onPress, isSelected, squareButtonText }) => {
 const styles = StyleSheet.create({
   squareButton: {
     width: 50,
-    height: 50,
-    backgroundColor: "#ddd",
+    height: 60,
+    borderWidth: 1,
+    borderColor: "#EBE5DC",
     justifyContent: "center",
     alignItems: "center",
     margin: 5,
-    borderRadius: 5,
+    borderRadius: 10,
   },
   greenButton: {
-    backgroundColor: "green",
+    backgroundColor: "#EEC9B5",
   },
   buttonText: {
     fontSize: 18,
     fontWeight: "bold",
+    color: "#EBE5DC",
+  },
+  buttonText2: {
+    fontSize: 18,
+    fontWeight: "bold",
+    color: "#24221E",
   },
 });
 

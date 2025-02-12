@@ -1,8 +1,8 @@
 import React from "react";
-import { View, Text, Button } from "react-native";
+import { View, Text, Button, StyleSheet } from "react-native";
 import { Formik } from "formik";
 import * as Yup from "yup";
-import { RadioButton } from "react-native-paper";
+import SquareButton from "../molecules/SquareButton";
 
 const questions = [
   { id: "q1", question: "How satisfied are you with our service?" },
@@ -24,7 +24,7 @@ const SurveyForm = () => {
   return (
     <Formik
       initialValues={questions.reduce((values, q) => {
-        values[q.id] = ""; // Default empty value
+        values[q.id] = null; // Start with no selection
         return values;
       }, {})}
       validationSchema={validationSchema}
@@ -34,28 +34,20 @@ const SurveyForm = () => {
         <View style={{ padding: 20 }}>
           {questions.map(({ id, question }) => (
             <View key={id} style={{ marginBottom: 20 }}>
-              <Text
-                style={{ fontSize: 16, fontWeight: "bold", marginBottom: 8 }}
-              >
-                {question}
-              </Text>
+              <Text style={styles.questionText}>{question}</Text>
 
-              <RadioButton.Group
-                onValueChange={(value) => setFieldValue(id, value)}
-                value={values[id]}
-              >
+              <View style={styles.buttonRow}>
                 {[0, 1, 2, 3, 4, 5].map((num) => (
-                  <View
+                  <SquareButton
                     key={num}
-                    style={{ flexDirection: "row", alignItems: "center" }}
-                  >
-                    <RadioButton value={num} />
-                    <Text>{num}</Text>
-                  </View>
+                    squareButtonText={String(num)}
+                    isSelected={values[id] === num}
+                    onPress={() => setFieldValue(id, num)}
+                  />
                 ))}
-              </RadioButton.Group>
+              </View>
 
-              {errors[id] && <Text style={{ color: "red" }}>{errors[id]}</Text>}
+              {errors[id] && <Text style={styles.errorText}>{errors[id]}</Text>}
             </View>
           ))}
 
@@ -65,5 +57,21 @@ const SurveyForm = () => {
     </Formik>
   );
 };
+
+const styles = StyleSheet.create({
+  questionText: {
+    fontSize: 16,
+    fontWeight: "bold",
+    marginBottom: 8,
+  },
+  buttonRow: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginBottom: 10,
+  },
+  errorText: {
+    color: "red",
+  },
+});
 
 export default SurveyForm;

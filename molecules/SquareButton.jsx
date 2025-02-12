@@ -1,56 +1,36 @@
-import React, { useState } from "react";
+import React from "react";
 import { TouchableOpacity, StyleSheet, Text, View } from "react-native";
 
-const SquareButton = (props) => {
-  const [bttnStyle, setBttnStyle] = useState(styles.squareButton);
-
-  const changeColour = () => {
-    setBttnStyle((prevStyle) =>
-      prevStyle === styles.squareButton
-        ? styles.greenButton
-        : styles.squareButton
-    );
-  };
-
+const SquareButton = ({ onPress, isSelected, squareButtonText }) => {
   return (
-    <View>
-      <TouchableOpacity
-        style={bttnStyle}
-        onPress={() => {
-          props.onPress();
-          changeColour();
-        }}
-      >
-        <View style={styles.textContainer}>
-          <Text style={styles.buttonText}>{props.squareButtonText}</Text>
-        </View>
-      </TouchableOpacity>
-    </View>
+    <TouchableOpacity
+      style={[styles.squareButton, isSelected && styles.greenButton]}
+      onPress={onPress}
+    >
+      <View style={styles.textContainer}>
+        <Text style={styles.buttonText}>{squareButtonText}</Text>
+      </View>
+    </TouchableOpacity>
   );
 };
 
-export default SquareButton;
-
 const styles = StyleSheet.create({
   squareButton: {
-    padding: 20,
-    borderRadius: 10,
-    borderWidth: 1,
-    borderColor: "#EBE5DC",
+    width: 50,
+    height: 50,
+    backgroundColor: "#ddd",
     justifyContent: "center",
     alignItems: "center",
+    margin: 5,
+    borderRadius: 5,
   },
   greenButton: {
-    padding: 20,
-    borderRadius: 10,
-    borderWidth: 1,
-    borderColor: "#EBE5DC",
-    backgroundColor: "#868365",
-    justifyContent: "center",
-    alignItems: "center",
+    backgroundColor: "green",
   },
   buttonText: {
-    color: "#EBE5DC",
-    fontSize: 20,
+    fontSize: 18,
+    fontWeight: "bold",
   },
 });
+
+export default SquareButton;

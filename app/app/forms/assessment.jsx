@@ -28,6 +28,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     padding: 6,
+    backgroundColor: "#EBE5DC",
   },
   headerBodyContainer: {
     padding: 20,

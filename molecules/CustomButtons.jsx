@@ -11,7 +11,7 @@ const CustomButton1 = (props) => {
 const CustomButton2 = (props) => {
   return (
     <TouchableOpacity style={styles.buttonTwoStyles} onPress={props.onPress}>
-      <Text style={styles.buttonTextStyles}>{props.customButton2Text}</Text>
+      <Text style={styles.buttonTextStyles2}>{props.customButton2Text}</Text>
     </TouchableOpacity>
   );
 };
@@ -29,10 +29,16 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: "#24221E",
   },
+  buttonTextStyles2: {
+    fontSize: 16,
+    color: "#EBE5DC",
+  },
   buttonTwoStyles: {
     padding: 15,
+    paddingLeft: 35,
+    paddingRight: 35,
     borderRadius: 50,
-    backgroundColor: "#EBE5DC",
+    backgroundColor: "#24221E",
     alignItems: "center",
   },
 });

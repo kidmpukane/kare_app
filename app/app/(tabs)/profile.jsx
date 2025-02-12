@@ -4,6 +4,7 @@ import React, { useContext } from "react";
 import ProfileTop from "../../../components/profileAssets/ProfileTop";
 import ProfileMiddle from "../../../components/profileAssets/ProfileMiddle";
 import ProfileBottom from "../../../components/profileAssets/ProfileBottom";
+import { CustomButton2 } from "../../../molecules/CustomButtons";
 
 const Profile = () => {
   const { updateAuthInfo } = useContext(AuthenticationContext);
@@ -23,7 +24,8 @@ const Profile = () => {
       <ProfileMiddle />
       <ProfileBottom />
       <Text style={styles.profileText}>Profile</Text>
-      <Button title="Sign Out" onPress={handleSignOut} />
+
+      <CustomButton2 customButton2Text="Sign Out" onPress={handleSignOut} />
     </ScrollView>
   );
 };

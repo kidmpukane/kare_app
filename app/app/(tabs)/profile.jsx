@@ -20,9 +20,9 @@ const Profile = () => {
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      <ProfileTop />
+      {/* <ProfileTop />
       <ProfileMiddle />
-      <ProfileBottom />
+      <ProfileBottom /> */}
       <Text style={styles.profileText}>Profile</Text>
 
       <CustomButton2 customButton2Text="Sign Out" onPress={handleSignOut} />

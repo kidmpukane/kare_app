@@ -100,10 +100,10 @@ const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
     gap: 10,
-    paddingTop: 20,
+    paddingTop: 10,
     paddingLeft: 5,
     paddingRight: 5,
-    paddingBottom: 20,
+    paddingBottom: 10,
     backgroundColor: "#EBE5DC",
   },
   customButtonContainer: {
@@ -126,12 +126,11 @@ const styles = StyleSheet.create({
   filterContainer: {
     flexDirection: "row",
     alignItems: "center",
-    padding: 20,
     gap: 6,
   },
   recommendationsContainer: {
     flexDirection: "row",
-    padding: 20,
+    paddingLeft: 10,
     alignItems: "center",
     gap: 20,
   },

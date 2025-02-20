@@ -54,8 +54,8 @@ const results = () => {
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <SkinResults />
-      <Text style={styles.resultText}>Filter</Text>
-      <View style={styles.underline} />
+      {/* <Text style={styles.resultText}>Filter</Text>
+      <View style={styles.underline} /> */}
       <ScrollView
         horizontal
         showsHorizontalScrollIndicator={false}
@@ -70,9 +70,9 @@ const results = () => {
           />
         ))}
       </ScrollView>
-
+      {/* 
       <Text style={styles.resultText}>Recommendations</Text>
-      <View style={styles.underline} />
+      <View style={styles.underline} /> */}
       <ScrollView
         horizontal
         showsHorizontalScrollIndicator={false}

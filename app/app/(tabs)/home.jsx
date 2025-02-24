@@ -1,6 +1,7 @@
 import { View, Text, StyleSheet, ScrollView } from "react-native";
 import React from "react";
 import SkinTypeCard from "../../../organisms/SkinTypeCard";
+import useGetInfo from "../../../hooks/useGetInfo";
 
 const routineCard = [
   {
@@ -41,6 +42,19 @@ const routineCard = [
 ];
 
 export default function home() {
+  // const { isLoading, data, isError, error } = useGetInfo(
+  //   "http://10.0.2.2:8000/api/programs/programs/"
+  // );
+
+  // if (isLoading) {
+  //   return <Text>Loadming...</Text>;
+  // }
+
+  // if (isError) {
+  //   return <Text>Error: {error.message}</Text>;
+  // }
+  // console.log(data ? data : isError);
+
   return (
     <ScrollView contentContainerStyle={styles.container}>
       {routineCard.map((card) => (

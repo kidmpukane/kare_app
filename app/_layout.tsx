@@ -1,12 +1,16 @@
 import React, { useContext } from "react";
+import {QueryClient, QueryClientProvider} from "@tanstack/react-query"
 import { Stack } from "expo-router";
 import { AuthenticationContext, AuthenticationProvider } from "./AuthContext";
 
+const queryClient = new QueryClient()
 export default function RootLayout() {
   return (
-    <AuthenticationProvider>
+    <QueryClientProvider client={queryClient}>
+      <AuthenticationProvider>
       <AppContent />
     </AuthenticationProvider>
+    </QueryClientProvider>
   );
 }
 

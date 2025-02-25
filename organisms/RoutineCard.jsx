@@ -16,11 +16,7 @@ const RoutineCard = (props) => {
     "https://i.pinimg.com/474x/47/16/0b/47160bc6ba111b50084c244853a03744.jpg";
   return (
     <View>
-      <TouchableOpacity
-        onPress={() => {
-          router.push("/app/recommendations/routines");
-        }}
-      >
+      <TouchableOpacity onPress={props.onPress}>
         <ImageBackground
           source={{ uri: cardImage }}
           style={styles.cardImageStyles}

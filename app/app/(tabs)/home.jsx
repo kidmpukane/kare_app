@@ -68,7 +68,7 @@ export default function home() {
           cardImage={card.image}
           buttonName={card.duration}
           onPress={() => {
-            router.push("/app/recommendations/programs");
+            router.push(`/app/recommendations/programs?id=${card.id}`);
           }}
         />
       ))}

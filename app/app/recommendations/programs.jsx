@@ -1,5 +1,8 @@
 import { StyleSheet, Text, View, ScrollView } from "react-native";
+import { useRouter } from "expo-router";
+import { useLocalSearchParams } from "expo-router";
 import RoutineGuides from "../../../components/routineAssets/RoutineGuides";
+import useGetInfo from "../../../hooks/useGetInfo";
 import RoutineCard from "../../../organisms/RoutineCard";
 import React from "react";
 
@@ -34,6 +37,23 @@ const routineCard = [
 ];
 
 const programs = () => {
+  const router = useRouter();
+  const { id } = useLocalSearchParams();
+  const { isLoading, data, isError, error } = useGetInfo(
+    `http://10.0.2.2:8000//api/routines/get_routines_by_programs/${id}/ `
+  );
+
+  if (isLoading) {
+    return <Text>Loadming...</Text>;
+  }
+
+  if (isError) {
+    return <Text>Error: {error.message}</Text>;
+  }
+  console.log(data ? data : isError);
+  console.log(id);
+
+  const routineCardInfo = data ? data : routineCard;
   return (
     <ScrollView contentContainerStyle={styles.programsContainer}>
       <RoutineGuides />
@@ -45,6 +65,9 @@ const programs = () => {
           start={card.start}
           finish={card.finish}
           cardImage={card.cardImage}
+          onPress={() => {
+            router.push("/app/recommendations/routines");
+          }}
         />
       ))}
     </ScrollView>

@@ -18,7 +18,7 @@ const RoutineCard = (props) => {
     <View>
       <TouchableOpacity onPress={props.onPress}>
         <ImageBackground
-          source={{ uri: cardImage }}
+          source={{ uri: props.cardImage }}
           style={styles.cardImageStyles}
           imageStyle={styles.borderImageStyle}
         >

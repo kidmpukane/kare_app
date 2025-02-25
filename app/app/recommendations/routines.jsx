@@ -1,4 +1,7 @@
 import { StyleSheet, Text, View, ScrollView, FlatList } from "react-native";
+import { useRouter } from "expo-router";
+import { useLocalSearchParams } from "expo-router";
+import useGetInfo from "../../../hooks/useGetInfo";
 import ProgramTop from "../../../components/programAssets/ProgramTop";
 import ProductCard from "../../../organisms/ProductCard";
 import React from "react";
@@ -39,14 +42,31 @@ const routineSteps = [
 ];
 
 const Routines = () => {
+  const router = useRouter();
+  const { id } = useLocalSearchParams();
+  const { isLoading, data, isError, error } = useGetInfo(
+    `http://10.0.2.2:8000//api/routines/get_instructions_by_routines/${id}/ `
+  );
+
+  if (isLoading) {
+    return <Text>Loadming...</Text>;
+  }
+
+  if (isError) {
+    return <Text>Error: {error.message}</Text>;
+  }
+  console.log(data ? data : isError);
+  console.log(id);
+
+  const instructionsCardInfo = data ? data : routineSteps;
   return (
     <ScrollView contentContainerStyle={styles.routinesContainer}>
       <ProgramTop onPress={() => alert("Purchase Entire Routine")} />
       <View style={styles.underline} />
 
       <FlatList
-        data={routineSteps}
-        keyExtractor={(item) => item.id} // ✅ Extracts correct key
+        data={instructionsCardInfo}
+        keyExtractor={(item) => item.id}
         numColumns={2}
         columnWrapperStyle={styles.row}
         renderItem={(
@@ -54,10 +74,14 @@ const Routines = () => {
         ) => (
           <View style={styles.cardContainer}>
             <ProductCard
-              programNumber={item.programNumber} // ✅ Uses correct data
-              buttonName={item.buttonName}
-              onPress={() => alert(item.instructions)}
-              cardImage={item.cardImage}
+              programNumber={item.instruction_number} // ✅ Uses correct data
+              buttonName={`Step ${item.instruction_number}`} // ✅ Correct template literal
+              onPress={() =>
+                alert(
+                  `${item.instruction_description}\n${item.instruction_name}`
+                )
+              } // ✅ Fix alert to show both values
+              cardImage={item.image}
             />
           </View>
         )}

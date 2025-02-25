@@ -57,16 +57,16 @@ const programs = () => {
   return (
     <ScrollView contentContainerStyle={styles.programsContainer}>
       <RoutineGuides />
-      {routineCard.map((card) => (
+      {routineCardInfo.map((card) => (
         <RoutineCard
           key={card.id}
-          routineName={card.routineName}
-          routineDescription={card.routineDescription}
-          start={card.start}
-          finish={card.finish}
-          cardImage={card.cardImage}
+          routineName={card.routine_name}
+          routineDescription={card.description}
+          start={card.start_date}
+          finish={card.end_date}
+          cardImage={card.image}
           onPress={() => {
-            router.push("/app/recommendations/routines");
+            router.push(`/app/recommendations/routines?id=${card.id}`);
           }}
         />
       ))}

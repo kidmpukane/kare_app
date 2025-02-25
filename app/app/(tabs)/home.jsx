@@ -1,4 +1,5 @@
 import { View, Text, StyleSheet, ScrollView } from "react-native";
+import { useRouter } from "expo-router";
 import React from "react";
 import SkinTypeCard from "../../../organisms/SkinTypeCard";
 import useGetInfo from "../../../hooks/useGetInfo";
@@ -42,28 +43,33 @@ const routineCard = [
 ];
 
 export default function home() {
-  // const { isLoading, data, isError, error } = useGetInfo(
-  //   "http://10.0.2.2:8000/api/programs/programs/"
-  // );
+  const router = useRouter();
+  const { isLoading, data, isError, error } = useGetInfo(
+    "http://10.0.2.2:8000/api/programs/programs/"
+  );
 
-  // if (isLoading) {
-  //   return <Text>Loadming...</Text>;
-  // }
+  if (isLoading) {
+    return <Text>Loadming...</Text>;
+  }
 
-  // if (isError) {
-  //   return <Text>Error: {error.message}</Text>;
-  // }
-  // console.log(data ? data : isError);
+  if (isError) {
+    return <Text>Error: {error.message}</Text>;
+  }
+  console.log(data ? data : isError);
+  const cardInfo = data ? data : routineCard;
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      {routineCard.map((card) => (
+      {cardInfo.map((card) => (
         <SkinTypeCard
           key={card.id}
-          routineName={card.routineName}
-          routineDescription={card.routineDescription}
-          cardImage={card.cardImage}
-          buttonName="Explore Routine"
+          routineName={card.name}
+          routineDescription={card.description}
+          cardImage={card.image}
+          buttonName={card.duration}
+          onPress={() => {
+            router.push("/app/recommendations/programs");
+          }}
         />
       ))}
     </ScrollView>

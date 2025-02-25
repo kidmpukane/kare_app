@@ -17,11 +17,7 @@ const SkinTypeCard = (props) => {
     "https://i.pinimg.com/474x/47/16/0b/47160bc6ba111b50084c244853a03744.jpg";
   return (
     <View>
-      <TouchableOpacity
-        onPress={() => {
-          router.push("/app/recommendations/programs");
-        }}
-      >
+      <TouchableOpacity onPress={props.onPress}>
         <ImageBackground
           source={{ uri: props.cardImage }}
           style={styles.cardImageStyles}

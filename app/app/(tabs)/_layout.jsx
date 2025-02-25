@@ -1,5 +1,7 @@
 import { Tabs } from "expo-router";
-import FontAwesome from "@expo/vector-icons/FontAwesome";
+import Entypo from '@expo/vector-icons/Entypo';
+import AntDesign from '@expo/vector-icons/AntDesign';
+import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { BlurView } from 'expo-blur';
 import { StyleSheet } from 'react-native';
 
@@ -54,7 +56,7 @@ export default function TabsLayout() {
         options={{
           title: "Homes",
           headerShown: false,
-          tabBarIcon: () => <FontAwesome name="home" color="white" />,
+          tabBarIcon: () => <Entypo name="home" size={20} color="white" />,
         }}
       />
 
@@ -63,7 +65,7 @@ export default function TabsLayout() {
         options={{
           title: "Results",
           headerShown: false,
-          tabBarIcon: () => <FontAwesome name="pie-chart" color="white" />,
+          tabBarIcon: () => <AntDesign name="piechart" size={20} color="white" />,
         }}
       />
       <Tabs.Screen
@@ -71,7 +73,7 @@ export default function TabsLayout() {
         options={{
           title: "Profile",
           headerShown: false,
-          tabBarIcon: () => <FontAwesome name="user" color="white" />,
+          tabBarIcon: () => <FontAwesome name="user" size={20} color="white" />,
         }}
       />
     </Tabs>

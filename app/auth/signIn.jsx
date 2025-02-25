@@ -14,14 +14,12 @@ import {
   CustomButton3,
 } from "../../molecules/CustomButtons";
 import { Link, useRouter } from "expo-router";
-import { useContext, useState } from "react";
+import React, { useContext, useState } from "react";
 import * as Svg from "react-native-svg";
 import Logo from "../../assets/svg/Group 49.svg";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
-
-import React from "react";
 
 const signIn = () => {
   const router = useRouter();
@@ -177,7 +175,7 @@ const signIn = () => {
               />
             </View>
             <Link style={styles.bottomText} href="/auth/signUp">
-              Already have an{" "}
+              Don't yet have an -
               <Text style={{ fontWeight: "bold" }}>Account</Text>?
             </Link>
           </View>

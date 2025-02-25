@@ -34,7 +34,6 @@ const signUpValidationSchema = Yup.object().shape({
     .max(25, "Must be 25 characters or less")
     .required("Required")
     .oneOf([Yup.ref("password"), null], "Passwords must match"),
-  is_merchant: Yup.boolean().required("Required"),
 });
 
 const signUp = () => {
@@ -43,13 +42,6 @@ const signUp = () => {
   const [backendError, setBackendError] = useState("");
 
   return (
-    // <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-    //   <Text>Account Registrations</Text>
-    //   <CustomButton2
-    //     customButton2Text="Sign In"
-    //     onPress={() => router.push("/auth/signIn")}
-    //   />
-    // </View>
     <ScrollView style={styles.layout}>
       <Formik
         validationSchema={signUpValidationSchema}
@@ -64,10 +56,8 @@ const signUp = () => {
             const csrfResponse = await axios.get(
               "http://10.0.2.2:8000/api/accounts/csrf_cookie"
             );
-
             // Uncomment the following line when you have a working API endpoint
             console.log("CSRF token:", csrfResponse.data.csrf_token);
-
             // Make the login request with the CSRF token in the headers
             const registrationResponse = await axios.post(
               "http://10.0.2.2:8000/api/accounts/register/",
@@ -78,25 +68,21 @@ const signUp = () => {
                 },
               }
             );
-
             // Update the authentication context with the new CSRF token, session ID, and user ID
             updateAuthInfo({
               authCookie: registrationResponse.data.csrf_token,
               sessionId: registrationResponse.data.sessionid,
               userId: registrationResponse.data.user_id,
             });
-
+            router.push("/app/(tabs)/home");
             // Uncomment the following line when you have a working API endpoint
             console.log("Registration Response:", registrationResponse.data);
           } catch (error) {
             console.error(error);
-
             let backendErrorMessage =
               "An error occurred. Please try again later.";
-
             if (error.response && error.response.data) {
               const statusCode = error.response.status;
-
               switch (statusCode) {
                 case 400:
                   backendErrorMessage =
@@ -119,7 +105,6 @@ const signUp = () => {
                   break;
               }
             }
-
             // Assuming setBackendError is a function to update the UI with the error message
             setBackendError(backendErrorMessage);
           }

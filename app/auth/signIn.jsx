@@ -37,15 +37,6 @@ const signIn = () => {
       .matches(/\d+/, "One number"),
   });
 
-  // const handleSignIn = () => {
-  //   updateAuthInfo({
-  //     authCookie: "exampleAuthCookie",
-  //     sessionId: "12345",
-  //     userId: "user123",
-  //     profileId: "profile123",
-  //   });
-  //   router.push("/app/(tabs)/home");
-  // };
   return (
     <ScrollView style={styles.layout}>
       <Formik

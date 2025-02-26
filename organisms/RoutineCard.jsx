@@ -25,10 +25,18 @@ const RoutineCard = (props) => {
           <View style={styles.cardTopContainer}>
             <View style={styles.durationIndicator}>
               <View style={styles.durationContainer}>
-                <Text style={styles.durationText}>{props.start}</Text>
+                <Text style={styles.durationText}>
+                  {props.start.length > 7
+                    ? props.start.substring(0, 5)
+                    : props.start}
+                </Text>
               </View>
               <View style={styles.weeksContainer}>
-                <Text>{props.finish}</Text>
+                <Text>
+                  {props.finish.length > 7
+                    ? props.finish.substring(0, 5)
+                    : props.finish}
+                </Text>
               </View>
             </View>
           </View>

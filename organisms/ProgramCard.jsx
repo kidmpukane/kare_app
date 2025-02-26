@@ -15,13 +15,7 @@ const ProgramCard = (props) => {
     "https://i.pinimg.com/474x/77/64/bd/7764bdc071f1907071e0a6cf046865a0.jpg";
   return (
     <View>
-      <TouchableOpacity
-        onPress={() => {
-          {
-            router.push("/app/recommendations/programs");
-          }
-        }}
-      >
+      <TouchableOpacity onPress={props.onPress}>
         <ImageBackground
           source={{ uri: props.cardImage }}
           style={styles.cardImageStyles}
@@ -37,7 +31,11 @@ const ProgramCard = (props) => {
               </View>
             </View>
             <View style={styles.resultsIndicator}>
-              <Text>{props.programType}</Text>
+              <Text>
+                {props.programType.length > 10
+                  ? props.programType.substring(0, 6)
+                  : props.programType}
+              </Text>
             </View>
           </View>
           <View style={styles.cardDescription}>

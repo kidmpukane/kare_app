@@ -3,7 +3,8 @@ import SkinResults from "../../../components/resultsAssets/SkinResults";
 import ProgramCard from "../../../organisms/ProgramCard";
 import { CustomButton3 } from "../../../molecules/CustomButtons";
 import { React, useState } from "react";
-
+import { useRouter } from "expo-router";
+import useGetInfo from "../../../hooks/useGetInfo";
 const programRecommendations = [
   {
     id: "1",
@@ -51,6 +52,22 @@ const results = () => {
   const handleFilterPress = (filter) => {
     setSelectedFilter(filter); // Update selected filter
   };
+
+  const router = useRouter();
+  const { isLoading, data, isError, error } = useGetInfo(
+    "http://10.0.2.2:8000/api/programs/programs/"
+  );
+
+  if (isLoading) {
+    return <Text>Loadming...</Text>;
+  }
+
+  if (isError) {
+    return <Text>Error: {error.message}</Text>;
+  }
+  console.log(data ? data : isError);
+  const cardInfo = data ? data : item;
+
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <SkinResults />
@@ -78,15 +95,18 @@ const results = () => {
         showsHorizontalScrollIndicator={false}
         contentContainerStyle={styles.recommendationsContainer}
       >
-        {item.map((item) => (
+        {cardInfo.map((item) => (
           <ProgramCard
             key={item.id}
             id={item.id}
-            headerText={item.heading}
+            headerText={item.name}
             bodyText={item.description}
             programDuration={item.duration}
-            programType={item.skinType}
+            programType={item.name}
             cardImage={item.image}
+            onPress={() => {
+              router.push(`/app/recommendations/programs?id=${item.id}`);
+            }}
           />
         ))}
       </ScrollView>

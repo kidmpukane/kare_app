@@ -74,13 +74,13 @@ const Routines = () => {
         ) => (
           <View style={styles.cardContainer}>
             <ProductCard
-              programNumber={item.instruction_number} // ✅ Uses correct data
-              buttonName={`Step ${item.instruction_number}`} // ✅ Correct template literal
+              programNumber={item.instruction_number}
+              buttonName={`Step ${item.instruction_number}`}
               onPress={() =>
                 alert(
                   `${item.instruction_description}\n${item.instruction_name}`
                 )
-              } // ✅ Fix alert to show both values
+              }
               cardImage={item.image}
             />
           </View>

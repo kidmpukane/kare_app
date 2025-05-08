@@ -62,7 +62,7 @@ npm install -g expo-cli
 
 ### 🔗 Related Repositories
 
-* [Care – Backend API (Express, Node.js)](https://github.com/yourusername/care-backend)
+* [Care – Backend API (Django)](https://github.com/yourusername/care-backend)
 
 ---
 
@@ -106,8 +106,3 @@ npm run dev
 
 Rename `.env.example` to `.env` and add the necessary config variables.
 
----
-
-### 🔗 Related Repositories
-
-* [Care – Frontend App (React Native)](https://github.com/yourusername/care-frontend)

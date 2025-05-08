@@ -1,50 +1,113 @@
-# Welcome to your Expo app 👋
+## 🧴 Care – Personalized Skincare App (Frontend)
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+**Care** is a personalized skincare application designed to help users discover and track skincare routines tailored to their unique skin profile. Built with a focus on user experience and modularity, it’s a front-end single-page application that interfaces with a custom API.
 
-## Get started
+This repository contains the **frontend** codebase, built with **React Native (Expo)**. The backend lives in a separate repository [linked below](#🔗https://github.com/kidmpukane/kare_backend).
 
-1. Install dependencies
+---
 
-   ```bash
-   npm install
-   ```
 
-2. Start the app
+---
 
-   ```bash
-    npx expo start
-   ```
+### 🌟 Features
 
-In the output, you'll find options to open the app in a
+* Personalized onboarding flow to collect user skin data
+* Smart product suggestions based on selected skin concerns
+* Routine tracking and habit management
+* Clean, mobile-optimized UI using custom design
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+---
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+### 🧠 Purpose
 
-## Get a fresh project
+This project was designed as a way to explore:
 
-When you're ready, run:
+* End-to-end product design thinking
+* API communication and data handling
+* Frontend best practices in React Native
+* The intersection of personalization and e-commerce
+
+It also serves as a portfolio piece to demonstrate full-stack capability and product reasoning.
+
+---
+
+### 🚀 Getting Started
 
 ```bash
-npm run reset-project
+# Install dependencies
+npm install
+
+# Start the development server (Expo)
+npm run start
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Ensure you have the Expo CLI installed globally:
 
-## Learn more
+```bash
+npm install -g expo-cli
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+> ⚠️ The app communicates with a separate backend API. You'll need to clone and run the [backend repository](#🔗-related-repositories) for full functionality.
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+---
 
-## Join the community
+### 🛠️ Tech Stack
 
-Join our community of developers creating universal apps.
+* React Native (Expo)
+* React Navigation
+* Context API for state management
+* Custom UI components
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+---
+
+### 🔗 Related Repositories
+
+* [Care – Backend API (Express, Node.js)](https://github.com/yourusername/care-backend)
+
+---
+
+### 📄 License
+
+MIT – feel free to use and adapt with credit.
+
+---
+
+Now, for the **backend repo**, here’s the lighter version:
+
+---
+
+## 🧴 Care – Personalized Skincare App (Backend)
+
+This repository contains the **backend API** for the **Care** app — a personalized skincare platform.
+
+It was built with **Django**, designed to handle user data, product logic, and routine scheduling for the React Native frontend [available here]((https://github.com/kidmpukane/kare_backend)).
+
+---
+
+### 🔧 Features
+
+* RESTful API design
+* User data modeling (skin profile, preferences)
+* Product recommendation logic (basic version)
+* Routine management endpoints
+* Clean folder structure and environment configs
+
+---
+
+### 🚀 Getting Started
+
+```bash
+# Install dependencies
+npm install
+
+# Start local server
+npm run dev
+```
+
+Rename `.env.example` to `.env` and add the necessary config variables.
+
+---
+
+### 🔗 Related Repositories
+
+* [Care – Frontend App (React Native)](https://github.com/yourusername/care-frontend)

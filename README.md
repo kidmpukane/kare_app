@@ -1,4 +1,4 @@
-## 🧴 Care – Personalized Skincare App (Frontend)
+## 🧴 Kare – Personalized Skincare App (Frontend)
 
 **Care** is a personalized skincare application designed to help users discover and track skincare routines tailored to their unique skin profile. Built with a focus on user experience and modularity, it’s a front-end single-page application that interfaces with a custom API.
 
